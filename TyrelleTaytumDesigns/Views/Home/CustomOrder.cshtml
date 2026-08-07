@@ -1,0 +1,317 @@
+﻿@{
+    ViewData["Title"] = "Begin Your Custom Journey";
+}
+
+<!-- ========================================= -->
+<!-- Hero -->
+<!-- ========================================= -->
+
+<section class="journey-hero">
+
+    <div class="container">
+
+        <h1>Begin Your Custom Journey</h1>
+
+        <p>
+            Every bespoke garment begins with an idea.
+            Tell us about your vision and let's create something
+            beautifully unique together.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Introduction -->
+<!-- ========================================= -->
+
+<section class="journey-intro">
+
+    <div class="container">
+
+        <h2>Your Vision Starts Here</h2>
+
+        <p>
+            Whether you're preparing for a wedding, special event,
+            photoshoot, graduation, or simply looking for something
+            designed exclusively for you, we'd love to hear your ideas.
+        </p>
+
+        <p>
+            Complete the form below and we'll be in touch to discuss
+            your design, timeline, and the next steps of your journey.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Custom Order Form -->
+<!-- ========================================= -->
+
+<section class="journey-form">
+
+    <div class="container">
+
+        <form>
+
+            <!-- Personal Information -->
+
+            <h2>About You</h2>
+
+            <div class="form-group">
+
+                <label>Full Name</label>
+
+                <input type="text"
+                       name="FullName"
+                       id="FullName"
+                       class="form-control"
+                       placeholder="Enter your full name" />
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Email Address</label>
+
+                <input type="email"
+                       name="EmailAddress"
+                       id="EmailAddress"
+                       class="form-control"
+                       placeholder="Enter your email" />
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Phone Number</label>
+
+                <input type="tel"
+                       name="PhoneNumber"
+                       id="PhoneNumber"
+                       class="form-control"
+                       placeholder="+27..." />
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Preferred Contact Method</label>
+
+                <div class="contact-methods">
+
+                    <label class="radio-option">
+                        <input type="radio"
+                               name="PreferredContact"
+                               id="PreferredContactEmail"
+                               value="Email"
+                               checked />
+                        Email
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio"
+                               name="PreferredContact"
+                               id="PreferredContactPhone"
+                               value="Phone Call" />
+                        Phone Call
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio"
+                               name="PreferredContact"
+                               id="PreferredContactWhatsApp"
+                               value="WhatsApp" />
+                        WhatsApp
+                    </label>
+
+                </div>
+            </div>
+
+            
+
+            <!-- Design Information -->
+
+            <h2>Your Design</h2>
+
+            <div class="form-group">
+
+                <label>What would you like us to create?</label>
+
+                <select name="GarmentType" id="GarmentType" class="form-control">
+
+                    <option>Please Select</option>
+
+                    <option>Bridal Gown</option>
+
+                    <option>Matric Dance Dress</option>
+
+                    <option>Graduation Outfit</option>
+
+                    <option>Evening Wear</option>
+
+                    <option>Formal Suit</option>
+
+                    <option>Custom Design</option>
+
+                    <option>Alterations</option>
+
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Tell Us About Your Vision</label>
+
+                <textarea name="Vision" id="Vision" class="form-control"
+                        rows="6"
+                        placeholder="Tell us about your event, preferred style, colours, inspiration, timeline, or any ideas you'd like to share">
+                </textarea>
+
+             </div>
+
+            <div class="form-group">
+
+                <label>Occasion</label>
+
+                <input type="text" name="Occasion" id="Occasion"
+                       class="form-control"
+                       placeholder="Wedding, Matric Dance, Graduation, Birthday, Photoshoot, Formal Event..." />
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Preferred Colours (Optional)</label>
+
+                <input type="text"
+                       name="PreferredColours"
+                       id="PreferredColours"
+                       class="form-control"
+                       placeholder="Optional" />
+
+            </div>
+
+            <div class="form-group">
+
+                <label>When is your Event?</label>
+
+                <input type="date" name="EventDate" id="EventDate"
+                       class="form-control" />
+
+            </div>
+
+            <hr />
+
+            <!-- Budget -->
+
+            <h2>Budget</h2>
+
+            <div class="form-group">
+
+                <label>Estimated Budget</label>
+
+                <select name="Budget" id="Budget" class="form-control">
+
+                    <option>Please Select</option>
+
+                    <option>Below R2 000</option>
+
+                    <option>R2 000 - R5 000</option>
+
+                    <option>R5 000 - R10 000</option>
+
+                    <option>R10 000+</option>
+
+                    <option>I'm not sure yet</option>
+
+                </select>
+
+            </div>
+
+            
+
+            <!-- Inspiration -->
+
+            <h2>Inspiration</h2>
+
+            <div class="form-group">
+
+                <label>
+                    Upload inspiration photos, Pinterest images,
+                    or sketches that help communicate your vision
+                </label>
+
+                <input type="file"
+                       name="InspirationImages"
+                       id="InspirationImages"
+                       class="form-control" />
+
+            </div>
+
+            <label>Do you already have your measurements?</label>
+
+            <label>
+                <input type="radio"
+                       name="HasMeasurements"
+                       id="HasMeasurementsYes"
+                       value="Yes" />
+                Yes
+            </label>
+
+            <label>
+                <input type="radio"
+                       name="HasMeasurements"
+                       id="HasMeasurementsNo"
+                       value="No"
+                       checked />
+                No
+            </label>
+
+            <div id="measurementSection" style="display:none;">
+
+                <!-- Bust -->
+                <!-- Waist -->
+                <!-- Hips -->
+                <!-- Height -->
+
+            </div>
+
+
+            <button class="btn-primary">
+
+                Begin Your Journey
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Closing -->
+<!-- ========================================= -->
+
+<section class="journey-ending">
+
+    <div class="container">
+
+        <h2>Crafted With Care</h2>
+
+        <p>
+            Every design receives the same dedication,
+            creativity, and attention to detail.
+            We can't wait to bring your vision to life.
+        </p>
+
+    </div>
+
+</section>
