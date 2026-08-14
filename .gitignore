@@ -1,0 +1,22 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+
+# User files
+*.user
+*.suo
+
+# Build folders
+Debug/
+Release/
+
+# Logs
+*.log
+
+# GitHub Copilot
+CopilotIndices/
+
+# OS files
+Thumbs.db
+.DS_Store
