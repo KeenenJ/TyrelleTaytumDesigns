@@ -18,6 +18,7 @@
 /* Match the Portfolio subtitle typography while keeping the gold sweeping shine. */
 .featured-introduction p {
     margin: 0;
+    max-width: none !important;
     white-space: nowrap;
     font-family: Inter, sans-serif;
     font-size: clamp(.95rem, 1.05vw, 1.05rem);
