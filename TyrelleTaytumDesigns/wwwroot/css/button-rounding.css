@@ -1,0 +1,5 @@
+/* BUTTON REFINEMENT */
+.btn-primary,
+.btn-secondary {
+    border-radius: 8px;
+}
