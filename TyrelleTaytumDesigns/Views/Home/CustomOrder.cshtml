@@ -1,4 +1,6 @@
-﻿@{
+@model TyrelleTaytumDesigns.Models.CustomOrderModel
+
+@{
     ViewData["Title"] = "Begin Your Custom Journey";
 }
 
@@ -19,39 +21,43 @@
 
 <section class="journey-form">
     <div class="container">
-        <form>
+        <form asp-action="CustomOrder" method="post" enctype="multipart/form-data">
+            @if (TempData["SuccessMessage"] is string successMessage)
+            {
+                <div class="form-success" role="status">@successMessage</div>
+            }
+            <div asp-validation-summary="ModelOnly" class="form-error" role="alert"></div>
+
             <h2>About You</h2>
-
             <div class="form-group">
-                <label for="FullName">Full Name</label>
-                <input type="text" name="FullName" id="FullName" class="form-control" placeholder="Enter your full name" />
+                <label asp-for="FullName">Full Name</label>
+                <input asp-for="FullName" class="form-control" placeholder="e.g. Jane Doe" />
+                <span asp-validation-for="FullName" class="field-error"></span>
             </div>
-
             <div class="form-group">
-                <label for="EmailAddress">Email Address</label>
-                <input type="email" name="EmailAddress" id="EmailAddress" class="form-control" placeholder="Enter your email" />
+                <label asp-for="EmailAddress">Email Address</label>
+                <input asp-for="EmailAddress" class="form-control" placeholder="e.g. jane@email.com" />
+                <span asp-validation-for="EmailAddress" class="field-error"></span>
             </div>
-
             <div class="form-group">
-                <label for="PhoneNumber">Phone Number</label>
-                <input type="tel" name="PhoneNumber" id="PhoneNumber" class="form-control" placeholder="+27..." />
+                <label asp-for="PhoneNumber">Phone Number</label>
+                <input asp-for="PhoneNumber" class="form-control" placeholder="e.g. +27 82 123 4567" />
+                <span asp-validation-for="PhoneNumber" class="field-error"></span>
             </div>
-
             <div class="form-group">
                 <label>Preferred Contact Method</label>
                 <div class="contact-methods">
-                    <label class="radio-option"><input type="radio" name="PreferredContact" value="Email" checked /> Email</label>
-                    <label class="radio-option"><input type="radio" name="PreferredContact" value="Phone Call" /> Phone Call</label>
-                    <label class="radio-option"><input type="radio" name="PreferredContact" value="WhatsApp" /> WhatsApp</label>
+                    <label class="radio-option"><input asp-for="PreferredContact" type="radio" value="Email" /> Email</label>
+                    <label class="radio-option"><input asp-for="PreferredContact" type="radio" value="Phone Call" /> Phone Call</label>
+                    <label class="radio-option"><input asp-for="PreferredContact" type="radio" value="WhatsApp" /> WhatsApp</label>
                 </div>
             </div>
 
             <h2>Your Design</h2>
-
             <div class="form-group">
-                <label for="GarmentType">What would you like us to create?</label>
-                <select name="GarmentType" id="GarmentType" class="form-control">
-                    <option>Please Select</option>
+                <label asp-for="GarmentType">What would you like us to create?</label>
+                <select asp-for="GarmentType" class="form-control">
+                    <option value="">Please select</option>
                     <option>Bridal Gown</option>
                     <option>Matric Dance Dress</option>
                     <option>Graduation Outfit</option>
@@ -61,58 +67,59 @@
                     <option>Alterations</option>
                     <option>Other</option>
                 </select>
+                <span asp-validation-for="GarmentType" class="field-error"></span>
             </div>
-
             <div class="form-group">
-                <label for="Vision">Tell Us About Your Vision</label>
-                <textarea name="Vision" id="Vision" class="form-control" rows="6" placeholder="For example: Tell us about your event, preferred style, colours, inspiration, fit, timeline, or any ideas you'd like to share..."></textarea>
+                <label asp-for="Vision">Tell Us About Your Vision</label>
+                <textarea asp-for="Vision" class="form-control" rows="7" placeholder="e.g. I'm imagining an elegant fitted evening gown with a clean neckline, soft movement and a champagne-and-black colour palette..."></textarea>
+                <span asp-validation-for="Vision" class="field-error"></span>
             </div>
-
             <div class="form-group">
-                <label for="Occasion">Occasion</label>
-                <input type="text" name="Occasion" id="Occasion" class="form-control" placeholder="Wedding, Matric Dance, Graduation, Birthday, Photoshoot, Formal Event..." />
+                <label asp-for="Occasion">Occasion</label>
+                <input asp-for="Occasion" class="form-control" placeholder="e.g. Wedding, Matric Dance, Graduation, Birthday..." />
+                <span asp-validation-for="Occasion" class="field-error"></span>
             </div>
-
             <div class="form-group">
-                <label for="PreferredColours">Preferred Colours (Optional)</label>
-                <input type="text" name="PreferredColours" id="PreferredColours" class="form-control" placeholder="e.g. Black, champagne, emerald green..." />
+                <label asp-for="PreferredColours">Preferred Colours (Optional)</label>
+                <input asp-for="PreferredColours" class="form-control" placeholder="e.g. Black, champagne, emerald green..." />
             </div>
-
             <div class="form-group">
-                <label for="EventDate">When is your Event?</label>
-                <input type="date" name="EventDate" id="EventDate" class="form-control" />
+                <label asp-for="EventDate">When is your Event?</label>
+                <input asp-for="EventDate" class="form-control" />
             </div>
 
             <hr />
 
             <h2>Budget</h2>
             <div class="form-group">
-                <label for="Budget">Estimated Budget</label>
-                <select name="Budget" id="Budget" class="form-control">
-                    <option>Please Select</option>
+                <label asp-for="Budget">Estimated Budget</label>
+                <select asp-for="Budget" class="form-control">
+                    <option value="">Please select</option>
                     <option>Below R2 000</option>
                     <option>R2 000 - R5 000</option>
                     <option>R5 000 - R10 000</option>
                     <option>R10 000+</option>
                     <option>I'm not sure yet</option>
                 </select>
+                <span asp-validation-for="Budget" class="field-error"></span>
             </div>
 
             <h2>Inspiration</h2>
             <div class="form-group">
-                <label for="InspirationImages">Upload inspiration photos, Pinterest images, or sketches that help communicate your vision</label>
-                <input type="file" name="InspirationImages" id="InspirationImages" class="form-control" />
+                <label asp-for="InspirationImages">Upload inspiration photos, Pinterest images, or sketches</label>
+                <input asp-for="InspirationImages" type="file" class="form-control" accept="image/jpeg,image/png,image/webp,application/pdf" />
+                <small class="form-hint">Optional • Images or PDF • Maximum 10 MB</small>
             </div>
 
             <div class="form-group">
                 <label>Do you already have your measurements?</label>
                 <div class="contact-methods">
-                    <label class="radio-option"><input type="radio" name="HasMeasurements" value="Yes" /> Yes</label>
-                    <label class="radio-option"><input type="radio" name="HasMeasurements" value="No" checked /> No</label>
+                    <label class="radio-option"><input asp-for="HasMeasurements" type="radio" value="Yes" /> Yes</label>
+                    <label class="radio-option"><input asp-for="HasMeasurements" type="radio" value="No" /> No</label>
                 </div>
             </div>
 
-            <button type="submit" class="btn-primary">Begin Your Journey</button>
+            <button type="submit" class="btn-primary">Submit My Custom Journey</button>
         </form>
     </div>
 </section>
@@ -123,3 +130,7 @@
         <p>Every design receives the same dedication, creativity, and attention to detail. We can't wait to bring your vision to life.</p>
     </div>
 </section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
