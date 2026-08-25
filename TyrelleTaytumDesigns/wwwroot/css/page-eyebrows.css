@@ -24,6 +24,26 @@
     content: "YOUR DESIGN";
 }
 
+/* Keep the Custom Journey hero aligned with the centered editorial page style */
+.journey-hero {
+    text-align: center;
+}
+
+.journey-hero .container {
+    text-align: center;
+}
+
+.journey-hero .container::before {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.journey-hero p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Contact uses the existing eyebrow markup, but the hero label should not repeat the heading */
 .contact-hero .contact-eyebrow {
     font-size: 0;
@@ -42,4 +62,15 @@
 .journey-hero h1,
 .contact-hero h1 {
     margin-top: 0;
+}
+
+/* Heading statements should read cleanly without sentence-ending punctuation */
+.hero h1,
+.about-hero h1,
+.gallery-hero h1,
+.journey-hero h1,
+.contact-hero h1,
+section h2,
+section h3 {
+    text-wrap: balance;
 }
