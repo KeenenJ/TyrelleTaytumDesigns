@@ -75,3 +75,10 @@ section h2,
 section h3 {
     text-wrap: balance;
 }
+
+/* Global desktop presentation scale: visually similar to a 90% browser view */
+@media (min-width: 769px) {
+    body {
+        zoom: 0.9;
+    }
+}
