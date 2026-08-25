@@ -11,7 +11,6 @@
     margin-bottom: 8px;
 }
 
-/* Editorial statement: same visual scale, kept on one line on desktop. */
 .featured-introduction {
     width: 100%;
     max-width: none;
@@ -44,21 +43,11 @@
     75%, 100% { background-position: -40% 0; }
 }
 
-/*
-   RESTORED EDITORIAL SHOWCASE
-   --------------------------------
-   The first garment is the hero.
-   The red and silver garments stack beside it.
-   The green and blue garments sit underneath the hero.
-
-   The previous version used equal-width columns and very short rows,
-   which made the garments look cropped and compressed. These proportions
-   deliberately recreate the original fashion-editorial composition.
-*/
+/* Featured garments: preserve the original asymmetric editorial showcase. */
 .gallery-featured-section .collection-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1.4fr 1.4fr;
-    grid-template-rows: 235px 235px 235px;
+    grid-template-rows: 235px 235px 125px;
     gap: 8px;
     margin-top: 0;
 }
@@ -80,25 +69,27 @@
     filter: brightness(.96);
 }
 
-/* Large hero garment — 60% of the gallery width and two rows tall. */
+/* Large black hero — tall enough to show the feminine silhouette. */
 .gallery-featured-section .collection-grid img:nth-child(1) {
     grid-column: 1 / 3;
     grid-row: 1 / 3;
     object-position: 50% 58%;
 }
 
-/* Supporting garments on the right. */
+/* Give the red and white garments more vertical breathing room. */
 .gallery-featured-section .collection-grid img:nth-child(2) {
     grid-column: 3 / 5;
     grid-row: 1;
+    object-position: 50% 50%;
 }
 
 .gallery-featured-section .collection-grid img:nth-child(3) {
     grid-column: 3 / 5;
     grid-row: 2;
+    object-position: 50% 50%;
 }
 
-/* Smaller supporting works beneath the hero. */
+/* Smaller supporting works underneath the hero. */
 .gallery-featured-section .collection-grid img:nth-child(4) {
     grid-column: 1 / 2;
     grid-row: 3;
@@ -109,13 +100,11 @@
     grid-row: 3;
 }
 
-/* Only the five featured garments belong to the lightbox viewer. */
 .gallery-section-grid img,
 .designer-gallery-grid img {
     cursor: zoom-in;
 }
 
-/* Meet The Designer — smaller, quieter portraits with restrained rounding. */
 .designer-gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 300px));
     max-width: 640px;
@@ -129,7 +118,6 @@
     object-fit: cover;
 }
 
-/* Lightweight gallery viewer — larger than the page image, never full-screen. */
 .gallery-lightbox {
     position: fixed;
     inset: 0;
