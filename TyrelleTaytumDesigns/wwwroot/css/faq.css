@@ -29,13 +29,13 @@
 .faq-hero p {
     margin: 0 auto;
     max-width: 680px;
-    color: var(--lux-muted);
+    color: var(--lux-ink);
     line-height: 1.8;
 }
 
 .faq-section {
     padding: 42px 0 76px;
-    background: var(--lux-soft);
+    background: #fff;
 }
 
 .faq-section .container {
