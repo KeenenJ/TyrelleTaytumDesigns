@@ -27,6 +27,7 @@
 /* Keep the Custom Journey hero aligned with the centered editorial page style */
 .journey-hero {
     text-align: center;
+    background: #fafafa;
 }
 
 .journey-hero .container {
