@@ -1,0 +1,35 @@
+.field-error,
+.form-error {
+    display: block;
+    margin-top: 6px;
+    color: #9b3f3f;
+    font-size: .82rem;
+}
+
+.form-error:empty {
+    display: none;
+}
+
+.form-success {
+    margin: 0 0 26px;
+    padding: 16px 18px;
+    border: 1px solid #c8d8c8;
+    background: #f4f8f3;
+    color: #365b3c;
+    line-height: 1.6;
+}
+
+.form-hint {
+    display: block;
+    margin-top: 7px;
+    color: #777;
+    font-size: .78rem;
+}
+
+.input-validation-error {
+    border-color: #b45b5b !important;
+}
+
+.input-validation-error:focus {
+    box-shadow: 0 0 0 3px rgba(180,91,91,.10) !important;
+}
