@@ -16,18 +16,30 @@
     overflow: hidden;
 }
 
-/* Keep the entire statement consistently gold. */
+/* Behind The Brand-style body typography with the original sweeping white shine restored. */
 .featured-introduction p {
     margin: 0;
     white-space: nowrap;
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(.95rem, 1.22vw, 1.18rem);
-    line-height: 1.3;
+    font-family: Inter, sans-serif;
+    font-size: clamp(.95rem, 1.05vw, 1.05rem);
+    font-weight: 400;
+    line-height: 1.6;
     letter-spacing: .012em;
-    color: var(--lux-gold);
+    color: transparent;
+    background: linear-gradient(105deg, var(--lux-gold) 0%, var(--lux-gold) 42%, #f8f1df 49%, #fff 52%, var(--lux-gold) 59%, var(--lux-gold) 100%);
+    background-size: 240% 100%;
+    background-position: 120% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: galleryTextShine 6s ease-in-out infinite;
 }
 
-.featured-introduction p span { font: inherit; color: inherit; }
+.featured-introduction p span { font: inherit; }
+
+@keyframes galleryTextShine {
+    0%, 55% { background-position: 120% 0; }
+    75%, 100% { background-position: -40% 0; }
+}
 
 /* Preserve the asymmetric editorial showcase and give the garments room. */
 .gallery-featured-section .collection-grid {
@@ -186,7 +198,10 @@
 @media (max-width: 768px) {
     .gallery-featured-section { padding: 28px 0 38px; }
     .featured-introduction { margin-bottom: 18px; }
-    .featured-introduction p { white-space: normal; font-size: 1.05rem; }
+    .featured-introduction p {
+        white-space: normal;
+        font-size: 1.05rem;
+    }
 
     .gallery-featured-section .collection-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
