@@ -2,302 +2,116 @@
     ViewData["Title"] = "Contact";
 }
 
-<!-- ========================================= -->
-<!-- Hero -->
-<!-- ========================================= -->
-
 <section class="contact-hero">
-
     <div class="container">
-
         <h1>Let's Connect</h1>
-
-        <p>
-            Let's create something truly unique together. From custom bridal gowns and
-            matric dance dresses to special occasion wear, we're here to guide you
-            through every step of your bespoke design journey.
-        </p>
-
+        <p>Let's create something truly unique together. From custom bridal gowns and matric dance dresses to special occasion wear, we're here to guide you through every step of your bespoke design journey.</p>
     </div>
-
 </section>
-
-<!-- ========================================= -->
-<!-- Contact Information -->
-<!-- ========================================= -->
 
 <section class="contact-information">
-
     <div class="container">
-
         <div class="contact-grid">
-
-            <div class="contact-card">
-
+            <article class="contact-card">
                 <h2>Email</h2>
+                <a href="mailto:tyrelletaytumdesigns@gmail.com">tyrelletaytumdesigns@gmail.com</a>
+            </article>
 
-                <a href="mailto:tyrelletaytumdesigns@gmail.com">
-                    tyrelletaytumdesigns@gmail.com
-                </a>
-
-            </div>
-
-            <div class="contact-card">
-
+            <article class="contact-card">
                 <h2>Phone</h2>
+                <p><a href="tel:+27636894949">+27 63 689 4949</a></p>
+            </article>
 
-                <p>
-                    <a href="tel:+27636894949">
-                        +27 63 689 4949
-                    </a>
-                </p>
-
-            </div>
-
-            <div class="contact-card">
-
+            <article class="contact-card">
                 <h2>Studio</h2>
+                <p>Port Elizabeth (Gqeberha), South Africa</p>
+            </article>
 
-                <p>
-                    Port Elizabeh (Gqeberha), South Africa
-                </p>
-
-            </div>
-
-            <div class="contact-card">
-
+            <article class="contact-card">
                 <h2>Business Hours</h2>
-
                 <p>
-                    Monday - Friday
-                    <br />
-                    10:00 AM - 5:00 PM
-
+                    Monday – Friday<br />10:00 AM – 5:00 PM
                     <br /><br />
-
-                    Saturday
-                    <br />
-                    10:00 AM - 2:00 PM
-
+                    Saturday<br />10:00 AM – 2:00 PM
                     <br /><br />
-
-                    Sunday
-                    <br />
-                    Closed
+                    Sunday<br />Closed
                 </p>
-
-            </div>
-
+            </article>
         </div>
-
     </div>
-
 </section>
 
-<!-- ========================================= -->
-<!-- Contact Form -->
-<!-- ========================================= -->
 <section class="contact-form-section">
-
     <div class="container">
-
         <div class="form-wrapper">
-
             <h2>Send Us a Message</h2>
-
-            <p>
-                Have a question about our services, availability, or custom designs?
-                We'd love to hear from you. Complete the form below and we'll get
-                back to you as soon as possible
-            </p>
+            <p>Have a question about our services, availability, or custom designs? We'd love to hear from you. Complete the form below and we'll get back to you as soon as possible.</p>
 
             <form>
-
                 <div class="form-group">
-
                     <label for="FullName">Full Name</label>
-
-                    <input type="text"
-                           id="FullName"
-                           name="FullName" />
-
+                    <input type="text" id="FullName" name="FullName" class="form-control" placeholder="Enter your full name" />
                 </div>
 
                 <div class="form-group">
-
                     <label for="EmailAddress">Email Address</label>
-
-                    <input type="email"
-                           id="EmailAddress"
-                           name="EmailAddress" />
-
+                    <input type="email" id="EmailAddress" name="EmailAddress" class="form-control" placeholder="Enter your email address" />
                 </div>
 
                 <div class="form-group">
-
-                    <label>Phone Number (Optional)</label>
-
-                    <input type="tel"
-                           name="PhoneNumber"
-                           id="PhoneNumber"
-                           class="form-control"
-                           placeholder="+27..." />
-
+                    <label for="PhoneNumber">Phone Number (Optional)</label>
+                    <input type="tel" name="PhoneNumber" id="PhoneNumber" class="form-control" placeholder="+27..." />
                 </div>
 
                 <div class="form-group">
-
-                    <label>Reason for Contact</label>
-
+                    <label for="ReasonForContact">Reason for Contact</label>
                     <select name="ReasonForContact" id="ReasonForContact" class="form-control">
-
                         <option>Please Select</option>
-
                         <option>General Enquiry</option>
-
                         <option>Pricing Information</option>
-
                         <option>Availability</option>
-
                         <option>Collaboration Opportunity</option>
-
                         <option>Alterations</option>
-
                         <option>Website Feedback</option>
-
                         <option>Other</option>
-
                     </select>
-
                 </div>
 
                 <div class="form-group">
-
                     <label>Preferred Contact Method</label>
-
                     <div class="contact-methods">
-
-                        <label class="radio-option">
-
-                            <input type="radio"
-                                   name="PreferredContactMethod"
-                                   id="PreferredContactEmail"
-                                   value="Email"
-                                   checked />
-
-                            Email
-
-                        </label>
-
-                        <label class="radio-option">
-
-                            <input type="radio"
-                                   name="PreferredContactMethod"
-                                   id="PreferredContactPhone"
-                                   value="Phone Call" />
-
-                            Phone Call
-
-                        </label>
-
-                        <label class="radio-option">
-
-                            <input type="radio"
-                                   name="PreferredContactMethod"
-                                   id="PreferredContactWhatsApp"
-                                   value="WhatsApp" />
-
-                            WhatsApp
-
-                        </label>
-
+                        <label class="radio-option"><input type="radio" name="PreferredContactMethod" value="Email" checked /> Email</label>
+                        <label class="radio-option"><input type="radio" name="PreferredContactMethod" value="Phone Call" /> Phone Call</label>
+                        <label class="radio-option"><input type="radio" name="PreferredContactMethod" value="WhatsApp" /> WhatsApp</label>
                     </div>
-
                 </div>
 
                 <div class="form-group">
-
-                    <label>Your Message</label>
-
-                    <textarea name="Message"
-                              id="Message"
-                              class="form-control"
-                              rows="6"
-                              placeholder="Tell us how we can help you..."></textarea>
-
+                    <label for="Message">Your Message</label>
+                    <textarea name="Message" id="Message" class="form-control" rows="7" placeholder="Tell us how we can help you..."></textarea>
                 </div>
 
-                <button type="submit" class="btn-primary">
-
-                    Send Message
-
-                </button>
-
+                <button type="submit" class="btn-primary">Send Message</button>
             </form>
-
         </div>
-
     </div>
-
 </section>
-
-
-<!-- ========================================= -->
-<!-- Social Media -->
-<!-- ========================================= -->
 
 <section class="social-section">
-
     <div class="container">
-
         <h2>Stay Connected</h2>
-
-        <p>
-            Follow TyrelleTaytum Designs for our latest collections,
-            behind-the-scenes moments, and design inspiration
-        </p>
-
+        <p>Follow TyrelleTaytum Designs for our latest collections, behind-the-scenes moments, and design inspiration.</p>
         <div class="social-links">
-
-            <a href="https://www.instagram.com/tyrelletaytum"
-               target="_blank">
-                Instagram • @@tyrelletaytum
-            </a>
-
-            <a href="https://www.tiktok.com/@@tyrelletaytum"
-               target="_blank">
-                TikTok • @@tyrelletaytum
-            </a>
-
+            <a href="https://www.instagram.com/tyrelletaytum" target="_blank" rel="noopener noreferrer">Instagram • @@tyrelletaytum</a>
+            <a href="https://www.tiktok.com/@@tyrelletaytum" target="_blank" rel="noopener noreferrer">TikTok • @@tyrelletaytum</a>
         </div>
-
     </div>
-
 </section>
 
-<!-- ========================================= -->
-<!-- Final CTA -->
-<!-- ========================================= -->
-
 <section class="contact-cta">
-
     <div class="container">
-
         <h2>Ready to Bring Your Vision to Life?</h2>
-
-        <p>
-            Every remarkable garment begins with a conversation.
-            Let's create something truly unforgettable together.
-        </p>
-
-        <a asp-controller="Home"
-           asp-action="CustomOrder"
-           class="btn-primary">
-
-            Begin Your Custom Journey
-
-        </a>
-
+        <p>Every remarkable garment begins with a conversation. Let's create something truly unforgettable together.</p>
+        <a asp-controller="Home" asp-action="CustomOrder" class="btn-primary">Begin Your Custom Journey</a>
     </div>
-
 </section>
