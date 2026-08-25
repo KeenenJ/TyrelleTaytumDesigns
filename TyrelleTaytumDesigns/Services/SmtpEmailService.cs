@@ -35,25 +35,33 @@ namespace TyrelleTaytumDesigns.Services
         {
             var measurementUnit = string.IsNullOrWhiteSpace(model.MeasurementUnit) ? "cm" : model.MeasurementUnit;
             var measurements = $"""
-                <h3>Measurements</h3>
+                <h3>5. Measurements</h3>
                 <p><strong>Measurements available:</strong> {Encode(model.HasMeasurements)}</p>
-                {(model.HasMeasurements.Equals("Yes", StringComparison.OrdinalIgnoreCase) ? $"""
-                <p><strong>Unit:</strong> {Encode(measurementUnit)}</p>
-                <p><strong>Height:</strong> {Value(model.Height, measurementUnit)}</p>
-                <p><strong>Bust / Chest:</strong> {Value(model.BustChest, measurementUnit)}</p>
-                <p><strong>Waist:</strong> {Value(model.Waist, measurementUnit)}</p>
-                <p><strong>Hips:</strong> {Value(model.Hips, measurementUnit)}</p>
-                <p><strong>Shoulder to Shoulder:</strong> {Value(model.ShoulderToShoulder, measurementUnit)}</p>
-                <p><strong>Shoulder to Waist:</strong> {Value(model.ShoulderToWaist, measurementUnit)}</p>
-                <p><strong>Neck:</strong> {Value(model.Neck, measurementUnit)}</p>
-                <p><strong>Arm Length:</strong> {Value(model.ArmLength, measurementUnit)}</p>
-                <p><strong>Upper Arm:</strong> {Value(model.UpperArm, measurementUnit)}</p>
-                <p><strong>Wrist:</strong> {Value(model.Wrist, measurementUnit)}</p>
-                <p><strong>Waist to Floor:</strong> {Value(model.WaistToFloor, measurementUnit)}</p>
-                <p><strong>Full Garment Length:</strong> {Value(model.FullGarmentLength, measurementUnit)}</p>
-                <p><strong>Inseam:</strong> {Value(model.Inseam, measurementUnit)}</p>
-                """ : "<p><em>Client does not currently have measurements.</em></p>")}
                 """;
+
+            if (model.HasMeasurements.Equals("Yes", StringComparison.OrdinalIgnoreCase))
+            {
+                measurements += $"""
+                    <p><strong>Unit:</strong> {Encode(measurementUnit)}</p>
+                    <p><strong>Height:</strong> {Value(model.Height, measurementUnit)}</p>
+                    <p><strong>Bust / Chest:</strong> {Value(model.BustChest, measurementUnit)}</p>
+                    <p><strong>Waist:</strong> {Value(model.Waist, measurementUnit)}</p>
+                    <p><strong>Hips:</strong> {Value(model.Hips, measurementUnit)}</p>
+                    <p><strong>Shoulder to Shoulder:</strong> {Value(model.ShoulderToShoulder, measurementUnit)}</p>
+                    <p><strong>Shoulder to Waist:</strong> {Value(model.ShoulderToWaist, measurementUnit)}</p>
+                    <p><strong>Neck:</strong> {Value(model.Neck, measurementUnit)}</p>
+                    <p><strong>Arm Length:</strong> {Value(model.ArmLength, measurementUnit)}</p>
+                    <p><strong>Upper Arm:</strong> {Value(model.UpperArm, measurementUnit)}</p>
+                    <p><strong>Wrist:</strong> {Value(model.Wrist, measurementUnit)}</p>
+                    <p><strong>Waist to Floor:</strong> {Value(model.WaistToFloor, measurementUnit)}</p>
+                    <p><strong>Full Garment Length:</strong> {Value(model.FullGarmentLength, measurementUnit)}</p>
+                    <p><strong>Inseam:</strong> {Value(model.Inseam, measurementUnit)}</p>
+                    """;
+            }
+            else
+            {
+                measurements += "<p><em>Client does not currently have measurements.</em></p>";
+            }
 
             var body = $"""
                 <h2>New Custom Design Enquiry</h2>
