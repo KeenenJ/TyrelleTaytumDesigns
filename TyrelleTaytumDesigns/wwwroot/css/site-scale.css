@@ -1,0 +1,25 @@
+/* =========================================================
+   SITE SCALE + COMPACT HOME HERO
+   Desktop presentation is intentionally tuned to feel like
+   an 80% browser zoom while remaining at 100% browser zoom
+========================================================= */
+
+@media (min-width: 769px) {
+    body {
+        zoom: 0.8;
+        width: 125%;
+    }
+
+    /* Keep the homepage hero visually compact rather than full-screen */
+    .hero {
+        min-height: min(650px, 68vh);
+        padding: 88px 0;
+    }
+}
+
+/* Mobile remains naturally sized and responsive */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 620px;
+    }
+}
