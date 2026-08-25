@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="~/css/luxury-overrides.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/home-gallery.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/launch-polish.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/form-validation.css" asp-append-version="true" />
     @RenderSection("Styles", required: false)
 </head>
 <body>
     <header>
         <nav class="navbar"><div class="container">
-            <a class="logo" asp-controller="Home" asp-action="Index"><span class="logo-main">TYRELLE TATUM</span><span class="logo-sub">DESIGNS</span></a>
+            <a class="logo" asp-controller="Home" asp-action="Index"><span class="logo-main">TYRELLE TAYTUM</span><span class="logo-sub">DESIGNS</span></a>
             <ul class="nav-links">
                 <li><a asp-controller="Home" asp-action="Index">Home</a></li><li><a asp-controller="Home" asp-action="Gallery">Gallery</a></li><li><a asp-controller="Home" asp-action="About">About</a></li><li><a asp-controller="Home" asp-action="CustomOrder">Custom Journey</a></li><li><a asp-controller="Home" asp-action="FAQ">FAQ</a></li><li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
             </ul>
@@ -30,6 +31,6 @@
         </div>
         <div class="copyright"><p>&copy; @DateTime.Now.Year TyrelleTaytum Designs. All Rights Reserved.</p></div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script><script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script><script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script><script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script><script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script><script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script><script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body></html>
