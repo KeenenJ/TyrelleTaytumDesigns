@@ -1,26 +1,27 @@
 /* =========================================================
-   GALLERY — EDITORIAL POLISH
+   GALLERY — EDITORIAL SHOWCASE
    ========================================================= */
 
-/* 1. Designed With Purpose — compact editorial statement. */
-.gallery-introduction {
-    padding: 24px 0 28px;
-    text-align: center;
+/* Featured Designs now owns the editorial statement instead of using a
+   separate introduction section. */
+.gallery-featured-section {
+    padding: 42px 0 58px;
     background: #fafafa;
-    border-top: 1px solid rgba(169,138,85,.08);
-    border-bottom: 1px solid rgba(169,138,85,.08);
 }
 
-.gallery-introduction .container {
-    max-width: 900px;
+.gallery-featured-section .container > h2 {
+    margin-bottom: 8px;
 }
 
-.gallery-introduction h2,
-.gallery-introduction p {
+.featured-introduction {
+    max-width: 760px;
+    margin: 0 0 28px;
+}
+
+.featured-introduction h3,
+.featured-introduction p {
     position: relative;
     display: table;
-    margin-left: auto;
-    margin-right: auto;
     color: transparent;
     background: linear-gradient(105deg, var(--lux-gold) 0%, var(--lux-gold) 42%, #f8f1df 49%, #fff 52%, var(--lux-gold) 59%, var(--lux-gold) 100%);
     background-size: 240% 100%;
@@ -30,22 +31,20 @@
     animation: galleryTextShine 6s ease-in-out infinite;
 }
 
-.gallery-introduction h2 {
-    margin-top: 0;
-    margin-bottom: 5px;
+.featured-introduction h3 {
+    margin: 0 0 3px;
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+    font-size: clamp(1.25rem, 1.8vw, 1.55rem);
     line-height: 1.05;
     letter-spacing: .015em;
 }
 
-.gallery-introduction p {
-    max-width: 650px;
-    margin-top: 0;
-    margin-bottom: 0;
+.featured-introduction p {
+    max-width: 760px;
+    margin: 0;
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(.95rem, 1.3vw, 1.12rem);
-    line-height: 1.3;
+    font-size: clamp(.9rem, 1.15vw, 1.02rem);
+    line-height: 1.35;
     letter-spacing: .025em;
 }
 
@@ -54,73 +53,66 @@
     75%, 100% { background-position: -40% 0; }
 }
 
-/* 2. Featured Designs — restore the asymmetric editorial composition while keeping it compact. */
-.gallery-hero + .gallery-introduction + .collection-section {
-    padding: 34px 0 44px;
-}
-
-.gallery-hero + .gallery-introduction + .collection-section .container > h2 {
-    margin-bottom: 6px;
-}
-
-.gallery-hero + .gallery-introduction + .collection-section .container > p {
-    margin-bottom: 18px;
-}
-
-.gallery-hero + .gallery-introduction + .collection-section .collection-grid {
+/* The featured gallery is deliberately larger now. The first garment remains
+   the visual anchor, while all five designs get meaningful showcase space. */
+.gallery-featured-section .collection-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: 180px 180px 105px;
-    gap: 8px;
+    grid-template-rows: 300px 300px 320px;
+    gap: 10px;
     margin-top: 0;
 }
 
-.gallery-hero + .gallery-introduction + .collection-section .collection-grid img {
+.gallery-featured-section .collection-grid img {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
     cursor: zoom-in;
     border-radius: 0;
     transition: transform .35s ease, filter .35s ease;
 }
 
-.gallery-hero + .gallery-introduction + .collection-section .collection-grid img:hover {
+.gallery-featured-section .collection-grid img:hover {
     filter: brightness(.96);
 }
 
-/* Large hero image on the left, two stacked details on the right, two smaller works underneath. */
-.gallery-hero + .gallery-introduction + .collection-section .collection-grid img:nth-child(1) {
+/* Large hero garment. */
+.gallery-featured-section .collection-grid img:nth-child(1) {
     grid-column: 1 / 3;
     grid-row: 1 / 3;
 }
 
-.gallery-hero + .gallery-introduction + .collection-section .collection-grid img:nth-child(2) {
+/* Two supporting garments. */
+.gallery-featured-section .collection-grid img:nth-child(2) {
     grid-column: 3 / 5;
     grid-row: 1;
 }
 
-.gallery-hero + .gallery-introduction + .collection-section .collection-grid img:nth-child(3) {
+.gallery-featured-section .collection-grid img:nth-child(3) {
     grid-column: 3 / 5;
     grid-row: 2;
 }
 
-.gallery-hero + .gallery-introduction + .collection-section .collection-grid img:nth-child(4) {
-    grid-column: 1;
+/* The remaining two designs are deliberately much larger than the previous
+   thumbnail strips so the garments can actually be appreciated. */
+.gallery-featured-section .collection-grid img:nth-child(4) {
+    grid-column: 1 / 3;
     grid-row: 3;
 }
 
-.gallery-hero + .gallery-introduction + .collection-section .collection-grid img:nth-child(5) {
-    grid-column: 2;
+.gallery-featured-section .collection-grid img:nth-child(5) {
+    grid-column: 3 / 5;
     grid-row: 3;
 }
 
-/* All gallery imagery remains clickable, but only the five featured garments belong to this viewer. */
+/* Only the five featured garments belong to the lightbox viewer. */
 .gallery-section-grid img,
 .designer-gallery-grid img {
     cursor: zoom-in;
 }
 
-/* 3. Meet The Designer — smaller, quieter portraits with restrained rounding. */
+/* Meet The Designer — smaller, quieter portraits with restrained rounding. */
 .designer-gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 300px));
     max-width: 640px;
@@ -134,7 +126,7 @@
     object-fit: cover;
 }
 
-/* 4. Lightweight gallery viewer — larger than the page image, never full-screen. */
+/* Lightweight gallery viewer — larger than the page image, never full-screen. */
 .gallery-lightbox {
     position: fixed;
     inset: 0;
@@ -235,49 +227,40 @@
 }
 
 @media (max-width: 768px) {
-    .gallery-introduction {
-        padding: 22px 0 26px;
+    .gallery-featured-section {
+        padding: 32px 0 42px;
     }
 
-    .gallery-introduction h2 {
-        font-size: 1.7rem;
+    .featured-introduction {
+        margin-bottom: 22px;
     }
 
-    .gallery-introduction p {
-        font-size: 1rem;
-        max-width: 90%;
-    }
-
-    .gallery-hero + .gallery-introduction + .collection-section {
-        padding: 30px 0 40px;
-    }
-
-    .gallery-hero + .gallery-introduction + .collection-section .collection-grid {
+    .gallery-featured-section .collection-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: repeat(4, 150px);
+        grid-template-rows: 240px 190px 190px 190px;
     }
 
-    .gallery-hero + .gallery-introduction + .collection-section .collection-grid img:nth-child(1) {
+    .gallery-featured-section .collection-grid img:nth-child(1) {
         grid-column: 1 / 3;
         grid-row: 1 / 3;
     }
 
-    .gallery-hero + .gallery-introduction + .collection-section .collection-grid img:nth-child(2) {
+    .gallery-featured-section .collection-grid img:nth-child(2) {
         grid-column: 1;
         grid-row: 3;
     }
 
-    .gallery-hero + .gallery-introduction + .collection-section .collection-grid img:nth-child(3) {
+    .gallery-featured-section .collection-grid img:nth-child(3) {
         grid-column: 2;
         grid-row: 3;
     }
 
-    .gallery-hero + .gallery-introduction + .collection-section .collection-grid img:nth-child(4) {
+    .gallery-featured-section .collection-grid img:nth-child(4) {
         grid-column: 1;
         grid-row: 4;
     }
 
-    .gallery-hero + .gallery-introduction + .collection-section .collection-grid img:nth-child(5) {
+    .gallery-featured-section .collection-grid img:nth-child(5) {
         grid-column: 2;
         grid-row: 4;
     }
