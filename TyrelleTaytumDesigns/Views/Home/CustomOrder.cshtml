@@ -13,7 +13,7 @@
 
 <section class="journey-intro">
     <div class="container">
-        <h2>Your Vision Starts Here</h2>
+        <h2 class="vision-starts-here">Your Vision Starts Here</h2>
         <p>Whether you're preparing for a wedding, special event, photoshoot, graduation, or simply looking for something designed exclusively for you, we'd love to hear your ideas.</p>
         <p>Complete the form below and we'll be in touch to discuss your design, timeline, and the next steps of your journey.</p>
     </div>
@@ -119,6 +119,76 @@
                 </div>
             </div>
 
+            <div id="measurementsSection" class="measurements-section" hidden>
+                <div class="measurements-heading">
+                    <h3>Your Measurements</h3>
+                    <p>Please enter the measurements you already have. Use the unit selected below and leave anything you don't have blank.</p>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="MeasurementUnit">Measurement Unit</label>
+                    <select asp-for="MeasurementUnit" class="form-control">
+                        <option value="cm">Centimetres (cm)</option>
+                        <option value="in">Inches (in)</option>
+                    </select>
+                </div>
+
+                <div class="measurement-grid">
+                    <div class="form-group">
+                        <label asp-for="Height">Height</label>
+                        <input asp-for="Height" class="form-control" placeholder="e.g. 168" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BustChest">Bust / Chest</label>
+                        <input asp-for="BustChest" class="form-control" placeholder="e.g. 92" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Waist">Waist</label>
+                        <input asp-for="Waist" class="form-control" placeholder="e.g. 74" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Hips">Hips</label>
+                        <input asp-for="Hips" class="form-control" placeholder="e.g. 102" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ShoulderToShoulder">Shoulder to Shoulder</label>
+                        <input asp-for="ShoulderToShoulder" class="form-control" placeholder="e.g. 40" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ShoulderToWaist">Shoulder to Waist</label>
+                        <input asp-for="ShoulderToWaist" class="form-control" placeholder="e.g. 42" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Neck">Neck</label>
+                        <input asp-for="Neck" class="form-control" placeholder="e.g. 36" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ArmLength">Arm Length</label>
+                        <input asp-for="ArmLength" class="form-control" placeholder="e.g. 60" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="UpperArm">Upper Arm</label>
+                        <input asp-for="UpperArm" class="form-control" placeholder="e.g. 30" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Wrist">Wrist</label>
+                        <input asp-for="Wrist" class="form-control" placeholder="e.g. 16" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="WaistToFloor">Waist to Floor</label>
+                        <input asp-for="WaistToFloor" class="form-control" placeholder="e.g. 110" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FullGarmentLength">Full Garment Length</label>
+                        <input asp-for="FullGarmentLength" class="form-control" placeholder="e.g. 145" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Inseam">Inseam</label>
+                        <input asp-for="Inseam" class="form-control" placeholder="e.g. 78" />
+                    </div>
+                </div>
+            </div>
+
             <button type="submit" class="btn-primary">Submit My Custom Journey</button>
         </form>
     </div>
@@ -131,6 +201,79 @@
     </div>
 </section>
 
+@section Styles {
+    <style>
+        .vision-starts-here {
+            display: inline-block;
+            background: linear-gradient(110deg, var(--lux-gold) 0%, var(--lux-gold) 38%, #ffffff 50%, var(--lux-gold) 62%, var(--lux-gold) 100%);
+            background-size: 240% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: visionShimmer 8s ease-in-out infinite;
+        }
+
+        @@keyframes visionShimmer {
+            0%, 55% { background-position: 180% center; }
+            100% { background-position: -80% center; }
+        }
+
+        .measurements-section {
+            margin: 28px 0 34px;
+            padding: 30px;
+            background: var(--lux-soft);
+            border: 1px solid var(--lux-line);
+        }
+
+        .measurements-heading h3 {
+            margin-bottom: 8px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        .measurements-heading p {
+            margin-bottom: 24px;
+            font-size: .9rem;
+            color: var(--lux-muted);
+        }
+
+        .measurement-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px 20px;
+        }
+
+        .measurement-grid .form-group {
+            margin-bottom: 0;
+        }
+
+        @@media (max-width: 640px) {
+            .measurement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .measurements-section {
+                padding: 22px;
+            }
+        }
+    </style>
+}
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const section = document.getElementById('measurementsSection');
+            const radios = document.querySelectorAll('input[name="HasMeasurements"]');
+
+            function toggleMeasurements() {
+                const hasMeasurements = document.querySelector('input[name="HasMeasurements"]:checked')?.value === 'Yes';
+                section.hidden = !hasMeasurements;
+            }
+
+            radios.forEach(radio => radio.addEventListener('change', toggleMeasurements));
+            toggleMeasurements();
+        });
+    </script>
 }
