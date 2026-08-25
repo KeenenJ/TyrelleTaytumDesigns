@@ -21,11 +21,11 @@
         <h2>Featured Designs</h2>
         <p>Custom garments created for special occasions, celebrations, and unforgettable moments</p>
         <div class="collection-grid">
-            <img src="~/images/collections/IMG1.jpg" alt="Featured custom fashion design" loading="lazy" />
-            <img src="~/images/collections/IMG2.jpg" alt="Featured custom fashion design" loading="lazy" />
-            <img src="~/images/collections/IMG3.jpg" alt="Featured custom fashion design" loading="lazy" />
-            <img src="~/images/collections/IMG4.jpg" alt="Featured custom fashion design" loading="lazy" />
-            <img src="~/images/collections/IMG5.jpg" alt="Featured custom fashion design" loading="lazy" />
+            <img class="gallery-viewer-image" src="~/images/collections/IMG1.jpg" alt="Featured custom fashion design" loading="lazy" />
+            <img class="gallery-viewer-image" src="~/images/collections/IMG2.jpg" alt="Featured custom fashion design" loading="lazy" />
+            <img class="gallery-viewer-image" src="~/images/collections/IMG3.jpg" alt="Featured custom fashion design" loading="lazy" />
+            <img class="gallery-viewer-image" src="~/images/collections/IMG4.jpg" alt="Featured custom fashion design" loading="lazy" />
+            <img class="gallery-viewer-image" src="~/images/collections/IMG5.jpg" alt="Featured custom fashion design" loading="lazy" />
         </div>
     </div>
 </section>
@@ -35,10 +35,10 @@
         <h2>Behind The Brand</h2>
         <p>A glimpse into the creative process, inspiration, and craftsmanship behind every design</p>
         <div class="gallery-section-grid">
-            <img src="~/images/behind-the-scene/BTS1.jpg" alt="TyrelleTaytum design process" loading="lazy" />
-            <img src="~/images/behind-the-scene/BTS2.jpg" alt="TyrelleTaytum design process" loading="lazy" />
-            <img src="~/images/behind-the-scene/BTS3.jpg" alt="TyrelleTaytum design process" loading="lazy" />
-            <img src="~/images/behind-the-scene/BTS4.jpg" alt="TyrelleTaytum design process" loading="lazy" />
+            <img class="gallery-viewer-image" src="~/images/behind-the-scene/BTS1.jpg" alt="TyrelleTaytum design process" loading="lazy" />
+            <img class="gallery-viewer-image" src="~/images/behind-the-scene/BTS2.jpg" alt="TyrelleTaytum design process" loading="lazy" />
+            <img class="gallery-viewer-image" src="~/images/behind-the-scene/BTS3.jpg" alt="TyrelleTaytum design process" loading="lazy" />
+            <img class="gallery-viewer-image" src="~/images/behind-the-scene/BTS4.jpg" alt="TyrelleTaytum design process" loading="lazy" />
         </div>
     </div>
 </section>
@@ -48,8 +48,8 @@
         <h2>Meet The Designer</h2>
         <p>Tyrelle Taytum, passionate about creating elegant, personalized garments that celebrate individuality and confidence</p>
         <div class="gallery-section-grid designer-gallery-grid">
-            <img src="~/images/designer/PP1.jpg" alt="Tyrelle Taytum, founder and designer" loading="lazy" />
-            <img src="~/images/designer/PP2.jpg" alt="Tyrelle Taytum, founder and designer" loading="lazy" />
+            <img class="gallery-viewer-image" src="~/images/designer/PP1.jpg" alt="Tyrelle Taytum, founder and designer" loading="lazy" />
+            <img class="gallery-viewer-image" src="~/images/designer/PP2.jpg" alt="Tyrelle Taytum, founder and designer" loading="lazy" />
         </div>
     </div>
 </section>
@@ -61,3 +61,82 @@
         <a asp-controller="Home" asp-action="CustomOrder" class="btn-primary">Begin Your Custom Journey</a>
     </div>
 </section>
+
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+    <div class="gallery-lightbox-frame" role="dialog" aria-modal="true" aria-label="Gallery image viewer">
+        <button type="button" class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close image viewer">×</button>
+        <button type="button" class="gallery-lightbox-prev" id="galleryLightboxPrev" aria-label="Previous image">‹</button>
+        <img class="gallery-lightbox-image" id="galleryLightboxImage" src="" alt="" />
+        <button type="button" class="gallery-lightbox-next" id="galleryLightboxNext" aria-label="Next image">›</button>
+        <span class="gallery-lightbox-counter" id="galleryLightboxCounter"></span>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = Array.from(document.querySelectorAll('.gallery-viewer-image'));
+            const lightbox = document.getElementById('galleryLightbox');
+            const lightboxImage = document.getElementById('galleryLightboxImage');
+            const closeButton = document.getElementById('galleryLightboxClose');
+            const previousButton = document.getElementById('galleryLightboxPrev');
+            const nextButton = document.getElementById('galleryLightboxNext');
+            const counter = document.getElementById('galleryLightboxCounter');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                currentIndex = (index + images.length) % images.length;
+                const image = images[currentIndex];
+                lightboxImage.src = image.currentSrc || image.src;
+                lightboxImage.alt = image.alt || 'Gallery image';
+                counter.textContent = `${currentIndex + 1} / ${images.length}`;
+            }
+
+            function openLightbox(index) {
+                showImage(index);
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                closeButton.focus();
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            images.forEach(function (image, index) {
+                image.addEventListener('click', function () {
+                    openLightbox(index);
+                });
+            });
+
+            previousButton.addEventListener('click', function (event) {
+                event.stopPropagation();
+                showImage(currentIndex - 1);
+            });
+
+            nextButton.addEventListener('click', function (event) {
+                event.stopPropagation();
+                showImage(currentIndex + 1);
+            });
+
+            closeButton.addEventListener('click', closeLightbox);
+
+            lightbox.addEventListener('click', function (event) {
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (!lightbox.classList.contains('is-open')) return;
+
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') showImage(currentIndex - 1);
+                if (event.key === 'ArrowRight') showImage(currentIndex + 1);
+            });
+        });
+    </script>
+}
