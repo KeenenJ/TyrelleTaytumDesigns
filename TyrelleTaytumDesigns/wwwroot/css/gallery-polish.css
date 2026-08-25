@@ -13,10 +13,9 @@
     width: 100%;
     max-width: none;
     margin: 0 0 20px;
-    overflow: hidden;
 }
 
-/* Behind The Brand-style body typography with the original sweeping white shine restored. */
+/* Match the Portfolio subtitle typography while keeping the gold sweeping shine. */
 .featured-introduction p {
     margin: 0;
     white-space: nowrap;
@@ -71,7 +70,6 @@
     object-position: 50% 58%;
 }
 
-/* Red and white now each get a full 360px row. */
 .gallery-featured-section .collection-grid img:nth-child(2) {
     grid-column: 3 / 5;
     grid-row: 1;
