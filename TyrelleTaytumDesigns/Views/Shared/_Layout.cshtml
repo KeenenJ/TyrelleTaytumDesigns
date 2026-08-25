@@ -10,157 +10,78 @@
     <link rel="stylesheet" href="~/css/home-gallery.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/launch-polish.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/form-validation.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/faq.css" asp-append-version="true" />
     @RenderSection("Styles", required: false)
 </head>
 <body>
     <header>
-
         <nav class="navbar">
-
             <div class="container">
-
-                <a class="logo"
-                   asp-controller="Home"
-                   asp-action="Index">
-
+                <a class="logo" asp-controller="Home" asp-action="Index">
                     <span class="logo-main">TYRELLE TAYTUM</span>
                     <span class="logo-sub">DESIGNS</span>
-
                 </a>
 
                 <ul class="nav-links">
-
-                    <li>
-                        <a asp-controller="Home"
-                           asp-action="Index">
-                            Home
-                        </a>
-                    </li>
-
-                    <li>
-                        <a asp-controller="Home"
-                           asp-action="Gallery">
-                            Gallery
-                        </a>
-                    </li>
-
-                    <li>
-                        <a asp-controller="Home"
-                           asp-action="About">
-                            About
-                        </a>
-                    </li>
-
-                    <li>
-                        <a asp-controller="Home"
-                           asp-action="CustomOrder">
-                            Custom Journey
-                        </a>
-                    </li>
-
-                    <li>
-                        <a asp-controller="Home"
-                           asp-action="FAQ">
-                            FAQ
-                        </a>
-                    </li>
-
-                    <li>
-                        <a asp-controller="Home"
-                           asp-action="Contact">
-                            Contact
-                        </a>
-                    </li>
-
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-controller="Home" asp-action="Gallery">Gallery</a></li>
+                    <li><a asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-controller="Home" asp-action="CustomOrder">Custom Journey</a></li>
+                    <li><a asp-controller="Home" asp-action="FAQ">FAQ</a></li>
+                    <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
-
             </div>
-
         </nav>
-
     </header>
+
     <main>@RenderBody()</main>
+
     <footer class="footer">
         <div class="footer-grid">
-
             <div class="footer-brand">
-
                 <h3>TyrelleTaytum Designs</h3>
-
-                <p>
-                    Fashion as a Tool for Transformation
-                </p>
-
+                <p>Fashion as a Tool for Transformation</p>
             </div>
 
             <div class="footer-links">
-
                 <h4>Quick Links</h4>
-
                 <ul>
-
                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-
                     <li><a asp-controller="Home" asp-action="Gallery">Gallery</a></li>
-
                     <li><a asp-controller="Home" asp-action="About">About</a></li>
-
                     <li><a asp-controller="Home" asp-action="CustomOrder">Custom Journey</a></li>
-
                     <li><a asp-controller="Home" asp-action="FAQ">FAQ</a></li>
-
                     <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
-
                 </ul>
-
             </div>
 
             <div class="footer-contact">
-
                 <h4>Contact</h4>
-
                 <p>Email: Tyrelletaytumdesigns@gmail.com</p>
-
                 <p>Phone: +27 63 689 4949</p>
-
                 <p>Gqeberha, South Africa</p>
-
                 <p>Business Hours: 10am - 6pm Mon - Fri, 10am - 2pm Sat</p>
-
             </div>
 
             <div class="footer-social">
-
                 <h4>Follow Us</h4>
-
                 <div class="social-links">
-
-                    <a href="https://www.instagram.com/tyrelletaytum"
-                       target="_blank">
-                        Instagram • @@tyrelletaytum
-                    </a>
-
-                    <a href="https://www.tiktok.com/@@tyrelletaytum"
-                       target="_blank">
-                        TikTok • @@tyrelletaytum
-                    </a>
-
+                    <a href="https://www.instagram.com/tyrelletaytum" target="_blank">Instagram • @@tyrelletaytum</a>
+                    <a href="https://www.tiktok.com/@@tyrelletaytum" target="_blank">TikTok • @@tyrelletaytum</a>
                 </div>
-
             </div>
-
         </div>
 
         <div class="copyright">
-
-            <p>
-                &copy; @DateTime.Now.Year TyrelleTaytum Designs.
-                All Rights Reserved.
-            </p>
-
+            <p>&copy; @DateTime.Now.Year TyrelleTaytum Designs. All Rights Reserved.</p>
         </div>
-        <div class="copyright"><p>&copy; @DateTime.Now.Year TyrelleTaytum Designs. All Rights Reserved.</p></div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script><script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script><script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script><script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script><script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
-</body></html>
+</body>
+</html>
