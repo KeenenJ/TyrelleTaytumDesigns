@@ -1,78 +1,86 @@
-﻿@{
+@{
     ViewData["Title"] = "Frequently Asked Questions";
 }
 
 <section class="faq-hero">
     <div class="container">
+        <span class="faq-eyebrow">QUESTIONS &amp; ANSWERS</span>
         <h1>Frequently Asked Questions</h1>
         <p>
             Every custom piece begins with a conversation.
-            Here are some of the questions we're most often asked
-            before beginning the design journey.
+            Find answers to some of the questions we are most often asked
+            before beginning your design journey.
         </p>
     </div>
 </section>
 
 <section class="faq-section">
     <div class="container">
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>Do clients need to book a consultation?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Yes. Every custom design begins with a consultation.
+                        This allows us to discuss your vision, measurements,
+                        design preferences, and event requirements before the
+                        creation process begins.
+                    </p>
+                </div>
+            </details>
 
-        <details class="faq-item">
-            <summary>Do clients need to book a consultation?</summary>
-            <div class="faq-answer">
-                <p>
-                    Yes. Every custom design begins with a consultation.
-                    This allows us to discuss your vision, measurements,
-                    design preferences, and event requirements before the creation process begins.
-                </p>
-            </div>
-        </details>
+            <details class="faq-item">
+                <summary>Do you require a deposit?</summary>
+                <div class="faq-answer">
+                    <p>Yes. A 50% deposit is required before the manufacturing process begins.</p>
+                </div>
+            </details>
 
-        <details class="faq-item">
-            <summary>Do you require a deposit?</summary>
-            <div class="faq-answer">
-                <p>Yes. A 50% deposit is required before the manufacturing process begins.</p>
-            </div>
-        </details>
+            <details class="faq-item">
+                <summary>How long do custom garments usually take?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Production time is typically between 2–3 weeks, depending on the complexity of the garment.
+                        Consultations are recommended at least 2–3 months before your event date to allow sufficient
+                        planning and production time.
+                    </p>
+                </div>
+            </details>
 
-        <details class="faq-item">
-            <summary>How long do custom garments usually take?</summary>
-            <div class="faq-answer">
-                <p>
-                    Production time is typically between 2–3 weeks, depending on the complexity of the garment.
-                    Consultations are recommended at least 2–3 months before your event date to allow sufficient planning and production time.
-                </p>
-            </div>
-        </details>
+            <details class="faq-item">
+                <summary>Do you offer alterations?</summary>
+                <div class="faq-answer">
+                    <p>Unfortunately, alterations are not currently offered.</p>
+                </div>
+            </details>
 
-        <details class="faq-item">
-            <summary>Do you offer alterations?</summary>
-            <div class="faq-answer">
-                <p>Unfortunately, alterations are not currently offered.</p>
-            </div>
-        </details>
+            <details class="faq-item">
+                <summary>Do you offer delivery or collection?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Yes. Both delivery and collection options are available.
+                        Details can be discussed during your consultation.
+                    </p>
+                </div>
+            </details>
 
-        <details class="faq-item">
-            <summary>Do you offer delivery or collection?</summary>
-            <div class="faq-answer">
-                <p>Yes. Both delivery and collection options are available. Details can be discussed during your consultation.</p>
-            </div>
-        </details>
-
-        <details class="faq-item">
-            <summary>Can I send inspiration pictures?</summary>
-            <div class="faq-answer">
-                <p>
-                    Absolutely. Inspiration images, Pinterest boards, sketches, and reference photos are always welcome
-                    and help communicate your vision more clearly.
-                </p>
-            </div>
-        </details>
-
+            <details class="faq-item">
+                <summary>Can I send inspiration pictures?</summary>
+                <div class="faq-answer">
+                    <p>
+                        Absolutely. Inspiration images, Pinterest boards, sketches,
+                        and reference photos are always welcome and help communicate
+                        your vision more clearly.
+                    </p>
+                </div>
+            </details>
+        </div>
     </div>
 </section>
 
 <section class="faq-cta">
     <div class="container">
+        <span class="faq-eyebrow">STILL CURIOUS?</span>
         <h2>Still Have a Question?</h2>
         <p>We'd love to hear from you. Get in touch and let's discuss your vision.</p>
         <a asp-controller="Home" asp-action="Contact" class="btn-primary">Contact Us</a>
