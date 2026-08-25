@@ -33,23 +33,52 @@ namespace TyrelleTaytumDesigns.Services
 
         public async Task SendCustomOrderEmailAsync(CustomOrderModel model)
         {
+            var measurementUnit = string.IsNullOrWhiteSpace(model.MeasurementUnit) ? "cm" : model.MeasurementUnit;
+            var measurements = $"""
+                <h3>Measurements</h3>
+                <p><strong>Measurements available:</strong> {Encode(model.HasMeasurements)}</p>
+                {(model.HasMeasurements.Equals("Yes", StringComparison.OrdinalIgnoreCase) ? $"""
+                <p><strong>Unit:</strong> {Encode(measurementUnit)}</p>
+                <p><strong>Height:</strong> {Value(model.Height, measurementUnit)}</p>
+                <p><strong>Bust / Chest:</strong> {Value(model.BustChest, measurementUnit)}</p>
+                <p><strong>Waist:</strong> {Value(model.Waist, measurementUnit)}</p>
+                <p><strong>Hips:</strong> {Value(model.Hips, measurementUnit)}</p>
+                <p><strong>Shoulder to Shoulder:</strong> {Value(model.ShoulderToShoulder, measurementUnit)}</p>
+                <p><strong>Shoulder to Waist:</strong> {Value(model.ShoulderToWaist, measurementUnit)}</p>
+                <p><strong>Neck:</strong> {Value(model.Neck, measurementUnit)}</p>
+                <p><strong>Arm Length:</strong> {Value(model.ArmLength, measurementUnit)}</p>
+                <p><strong>Upper Arm:</strong> {Value(model.UpperArm, measurementUnit)}</p>
+                <p><strong>Wrist:</strong> {Value(model.Wrist, measurementUnit)}</p>
+                <p><strong>Waist to Floor:</strong> {Value(model.WaistToFloor, measurementUnit)}</p>
+                <p><strong>Full Garment Length:</strong> {Value(model.FullGarmentLength, measurementUnit)}</p>
+                <p><strong>Inseam:</strong> {Value(model.Inseam, measurementUnit)}</p>
+                """ : "<p><em>Client does not currently have measurements.</em></p>")}
+                """;
+
             var body = $"""
                 <h2>New Custom Design Enquiry</h2>
+
+                <h3>1. About the Client</h3>
                 <p><strong>Name:</strong> {Encode(model.FullName)}</p>
                 <p><strong>Email:</strong> {Encode(model.EmailAddress)}</p>
                 <p><strong>Phone:</strong> {Encode(model.PhoneNumber)}</p>
                 <p><strong>Preferred contact:</strong> {Encode(model.PreferredContact)}</p>
-                <hr />
+
+                <h3>2. Design Details</h3>
                 <p><strong>Garment:</strong> {Encode(model.GarmentType)}</p>
                 <p><strong>Occasion:</strong> {Encode(model.Occasion)}</p>
                 <p><strong>Event date:</strong> {(model.EventDate.HasValue ? model.EventDate.Value.ToString("dd MMMM yyyy") : "Not provided")}</p>
                 <p><strong>Preferred colours:</strong> {Encode(model.PreferredColours ?? "Not provided")}</p>
-                <p><strong>Estimated budget:</strong> {Encode(model.Budget)}</p>
-                <p><strong>Measurements available:</strong> {Encode(model.HasMeasurements)}</p>
-                <hr />
                 <p><strong>Vision:</strong></p>
                 <p>{Encode(model.Vision).Replace("\n", "<br />")}</p>
+
+                <h3>3. Budget</h3>
+                <p><strong>Estimated budget:</strong> {Encode(model.Budget)}</p>
+
+                <h3>4. Inspiration</h3>
                 <p><strong>Inspiration file:</strong> {(model.InspirationImages?.FileName is null ? "Not provided" : Encode(model.InspirationImages.FileName))}</p>
+
+                {measurements}
                 """;
 
             await SendAsync($"Custom design enquiry — {model.FullName}", body, model.EmailAddress, model.InspirationImages);
@@ -95,6 +124,13 @@ namespace TyrelleTaytumDesigns.Services
             await client.SendMailAsync(message);
         }
 
-        private static string Encode(string value) => System.Net.WebUtility.HtmlEncode(value);
+        private static string Value(string? value, string unit)
+        {
+            return string.IsNullOrWhiteSpace(value)
+                ? "Not provided"
+                : $"{Encode(value)} {Encode(unit)}";
+        }
+
+        private static string Encode(string value) => WebUtility.HtmlEncode(value);
     }
 }
