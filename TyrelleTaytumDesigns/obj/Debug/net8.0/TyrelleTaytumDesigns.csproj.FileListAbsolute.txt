@@ -31,3 +31,4 @@ C:\Users\James Family\Desktop\Advanced Development\TyrelleTaytumDesigns\TyrelleT
 C:\Users\James Family\Desktop\Advanced Development\TyrelleTaytumDesigns\TyrelleTaytumDesigns\obj\Debug\net8.0\TyrelleTaytumDesigns.pdb
 C:\Users\James Family\Desktop\Advanced Development\TyrelleTaytumDesigns\TyrelleTaytumDesigns\obj\Debug\net8.0\TyrelleTaytumDesigns.genruntimeconfig.cache
 C:\Users\James Family\Desktop\Advanced Development\TyrelleTaytumDesigns\TyrelleTaytumDesigns\obj\Debug\net8.0\ref\TyrelleTaytumDesigns.dll
+C:\Users\James Family\Desktop\Advanced Development\TyrelleTaytumDesigns\TyrelleTaytumDesigns\obj\Debug\net8.0\TyrelleTaytumDesigns.sourcelink.json
