@@ -5,7 +5,8 @@
 }
 
 <section class="contact-hero">
-    <div class="container">
+    <div class="container contact-hero-inner">
+        <span class="contact-eyebrow">LET'S CONNECT</span>
         <h1>Let's Connect</h1>
         <p>Let's create something truly unique together. From custom bridal gowns and matric dance dresses to special occasion wear, we're here to guide you through every step of your bespoke design journey.</p>
     </div>
@@ -14,19 +15,38 @@
 <section class="contact-information">
     <div class="container">
         <div class="contact-grid">
-            <article class="contact-card"><h2>Email</h2><a href="mailto:tyrelletaytumdesigns@gmail.com">tyrelletaytumdesigns@gmail.com</a></article>
-            <article class="contact-card"><h2>Phone</h2><p><a href="tel:+27636894949">+27 63 689 4949</a></p></article>
-            <article class="contact-card"><h2>Studio</h2><p>Port Elizabeth (Gqeberha), South Africa</p></article>
-            <article class="contact-card"><h2>Business Hours</h2><p>Monday – Friday<br />10:00 AM – 5:00 PM<br /><br />Saturday<br />10:00 AM – 2:00 PM<br /><br />Sunday<br />Closed</p></article>
+            <article class="contact-card">
+                <span class="contact-card-label">EMAIL</span>
+                <h2>Email</h2>
+                <a href="mailto:tyrelletaytumdesigns@gmail.com">tyrelletaytumdesigns@gmail.com</a>
+            </article>
+            <article class="contact-card">
+                <span class="contact-card-label">CALL</span>
+                <h2>Phone</h2>
+                <a href="tel:+27636894949">+27 63 689 4949</a>
+            </article>
+            <article class="contact-card">
+                <span class="contact-card-label">VISIT</span>
+                <h2>Studio</h2>
+                <p>Port Elizabeth (Gqeberha), South Africa</p>
+            </article>
+            <article class="contact-card">
+                <span class="contact-card-label">AVAILABILITY</span>
+                <h2>Business Hours</h2>
+                <p>Monday – Friday · 10:00 AM – 5:00 PM<br />Saturday · 10:00 AM – 2:00 PM<br />Sunday · Closed</p>
+            </article>
         </div>
     </div>
 </section>
 
 <section class="contact-form-section">
     <div class="container">
-        <div class="form-wrapper">
-            <h2>Send Us a Message</h2>
-            <p>Have a question about our services, availability, or custom designs? Complete the form below and we'll get back to you as soon as possible.</p>
+        <div class="form-wrapper contact-form-wrapper">
+            <div class="contact-form-heading">
+                <span class="contact-eyebrow">START A CONVERSATION</span>
+                <h2>Send Us a Message</h2>
+                <p>Have a question about our services, availability, or custom designs? Complete the form below and we'll get back to you as soon as possible.</p>
+            </div>
 
             @if (TempData["SuccessMessage"] is string successMessage)
             {
@@ -35,77 +55,83 @@
 
             <div asp-validation-summary="ModelOnly" class="form-error" role="alert"></div>
 
-            <form asp-action="Contact" method="post">
-                <div class="form-group">
-                    <label asp-for="FullName">Full Name</label>
-                    <input asp-for="FullName" class="form-control" placeholder="e.g. Jane Doe" />
-                    <span asp-validation-for="FullName" class="field-error"></span>
-                </div>
+            <form asp-action="Contact" method="post" class="contact-form">
+                <div class="contact-form-grid">
+                    <div class="form-group">
+                        <label asp-for="FullName">Full Name</label>
+                        <input asp-for="FullName" class="form-control" placeholder="e.g. Jane Doe" />
+                        <span asp-validation-for="FullName" class="field-error"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="EmailAddress">Email Address</label>
-                    <input asp-for="EmailAddress" class="form-control" placeholder="e.g. jane@email.com" />
-                    <span asp-validation-for="EmailAddress" class="field-error"></span>
-                </div>
+                    <div class="form-group">
+                        <label asp-for="EmailAddress">Email Address</label>
+                        <input asp-for="EmailAddress" class="form-control" placeholder="e.g. jane@email.com" />
+                        <span asp-validation-for="EmailAddress" class="field-error"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="PhoneNumber">Phone Number (Optional)</label>
-                    <input asp-for="PhoneNumber" class="form-control" placeholder="e.g. +27 82 123 4567" />
-                    <span asp-validation-for="PhoneNumber" class="field-error"></span>
-                </div>
+                    <div class="form-group">
+                        <label asp-for="PhoneNumber">Phone Number <span>(Optional)</span></label>
+                        <input asp-for="PhoneNumber" class="form-control" placeholder="e.g. +27 82 123 4567" />
+                        <span asp-validation-for="PhoneNumber" class="field-error"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="ReasonForContact">Reason for Contact</label>
-                    <select asp-for="ReasonForContact" class="form-control">
-                        <option value="">Please select</option>
-                        <option>General Enquiry</option>
-                        <option>Pricing Information</option>
-                        <option>Availability</option>
-                        <option>Collaboration Opportunity</option>
-                        <option>Alterations</option>
-                        <option>Website Feedback</option>
-                        <option>Other</option>
-                    </select>
-                    <span asp-validation-for="ReasonForContact" class="field-error"></span>
-                </div>
-
-                <div class="form-group">
-                    <label>Preferred Contact Method</label>
-                    <div class="contact-methods">
-                        <label class="radio-option"><input asp-for="PreferredContactMethod" type="radio" value="Email" /> Email</label>
-                        <label class="radio-option"><input asp-for="PreferredContactMethod" type="radio" value="Phone Call" /> Phone Call</label>
-                        <label class="radio-option"><input asp-for="PreferredContactMethod" type="radio" value="WhatsApp" /> WhatsApp</label>
+                    <div class="form-group">
+                        <label asp-for="ReasonForContact">Reason for Contact</label>
+                        <select asp-for="ReasonForContact" class="form-control">
+                            <option value="">Please select</option>
+                            <option>General Enquiry</option>
+                            <option>Pricing Information</option>
+                            <option>Availability</option>
+                            <option>Collaboration Opportunity</option>
+                            <option>Alterations</option>
+                            <option>Website Feedback</option>
+                            <option>Other</option>
+                        </select>
+                        <span asp-validation-for="ReasonForContact" class="field-error"></span>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <fieldset class="form-group contact-preference">
+                    <legend>Preferred Contact Method</legend>
+                    <div class="contact-methods">
+                        <label class="radio-option"><input asp-for="PreferredContactMethod" type="radio" value="Email" /> <span>Email</span></label>
+                        <label class="radio-option"><input asp-for="PreferredContactMethod" type="radio" value="Phone Call" /> <span>Phone Call</span></label>
+                        <label class="radio-option"><input asp-for="PreferredContactMethod" type="radio" value="WhatsApp" /> <span>WhatsApp</span></label>
+                    </div>
+                </fieldset>
+
+                <div class="form-group message-group">
                     <label asp-for="Message">Your Message</label>
-                    <textarea asp-for="Message" class="form-control" rows="7" placeholder="Tell us how we can help you..."></textarea>
+                    <textarea asp-for="Message" class="form-control" rows="8" placeholder="Tell us how we can help you, what you're looking for, or anything you'd like us to know..."></textarea>
                     <span asp-validation-for="Message" class="field-error"></span>
                 </div>
 
-                <button type="submit" class="btn-primary">Send Message</button>
+                <div class="contact-submit">
+                    <button type="submit" class="btn-primary">Send Message <span aria-hidden="true">→</span></button>
+                </div>
             </form>
         </div>
     </div>
 </section>
 
 <section class="social-section">
-    <div class="container">
+    <div class="container social-section-inner">
+        <span class="contact-eyebrow">FOLLOW THE JOURNEY</span>
         <h2>Stay Connected</h2>
         <p>Follow TyrelleTaytum Designs for our latest collections, behind-the-scenes moments, and design inspiration.</p>
-        <div class="social-links">
-            <a href="https://www.instagram.com/tyrelletaytum" target="_blank" rel="noopener noreferrer">Instagram • @@tyrelletaytum</a>
-            <a href="https://www.tiktok.com/@@tyrelletaytum" target="_blank" rel="noopener noreferrer">TikTok • @@tyrelletaytum</a>
+        <div class="social-links contact-social-links">
+            <a href="https://www.instagram.com/tyrelletaytum" target="_blank" rel="noopener noreferrer"><span>Instagram</span><span>@@tyrelletaytum ↗</span></a>
+            <a href="https://www.tiktok.com/@@tyrelletaytum" target="_blank" rel="noopener noreferrer"><span>TikTok</span><span>@@tyrelletaytum ↗</span></a>
         </div>
     </div>
 </section>
 
 <section class="contact-cta">
-    <div class="container">
+    <div class="container contact-cta-inner">
+        <span class="contact-eyebrow">YOUR NEXT STEP</span>
         <h2>Ready to Bring Your Vision to Life?</h2>
         <p>Every remarkable garment begins with a conversation. Let's create something truly unforgettable together.</p>
-        <a asp-controller="Home" asp-action="CustomOrder" class="btn-primary">Begin Your Custom Journey</a>
+        <a asp-controller="Home" asp-action="CustomOrder" class="btn-primary">Begin Your Custom Journey <span aria-hidden="true">→</span></a>
     </div>
 </section>
 
