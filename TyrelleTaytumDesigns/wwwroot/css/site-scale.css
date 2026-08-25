@@ -1,0 +1,12 @@
+/* ==========================================
+   GLOBAL DESKTOP PRESENTATION SCALE
+   Keeps the site's 100% browser view visually
+   closer to the current 90% reference without
+   changing the browser zoom or page width
+========================================== */
+
+@media (min-width: 769px) {
+    body {
+        zoom: 0.9;
+    }
+}
