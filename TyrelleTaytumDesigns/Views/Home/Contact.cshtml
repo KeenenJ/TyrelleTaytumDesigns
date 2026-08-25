@@ -1,4 +1,6 @@
-﻿@{
+@model TyrelleTaytumDesigns.Models.ContactFormModel
+
+@{
     ViewData["Title"] = "Contact";
 }
 
@@ -12,31 +14,10 @@
 <section class="contact-information">
     <div class="container">
         <div class="contact-grid">
-            <article class="contact-card">
-                <h2>Email</h2>
-                <a href="mailto:tyrelletaytumdesigns@gmail.com">tyrelletaytumdesigns@gmail.com</a>
-            </article>
-
-            <article class="contact-card">
-                <h2>Phone</h2>
-                <p><a href="tel:+27636894949">+27 63 689 4949</a></p>
-            </article>
-
-            <article class="contact-card">
-                <h2>Studio</h2>
-                <p>Port Elizabeth (Gqeberha), South Africa</p>
-            </article>
-
-            <article class="contact-card">
-                <h2>Business Hours</h2>
-                <p>
-                    Monday – Friday<br />10:00 AM – 5:00 PM
-                    <br /><br />
-                    Saturday<br />10:00 AM – 2:00 PM
-                    <br /><br />
-                    Sunday<br />Closed
-                </p>
-            </article>
+            <article class="contact-card"><h2>Email</h2><a href="mailto:tyrelletaytumdesigns@gmail.com">tyrelletaytumdesigns@gmail.com</a></article>
+            <article class="contact-card"><h2>Phone</h2><p><a href="tel:+27636894949">+27 63 689 4949</a></p></article>
+            <article class="contact-card"><h2>Studio</h2><p>Port Elizabeth (Gqeberha), South Africa</p></article>
+            <article class="contact-card"><h2>Business Hours</h2><p>Monday – Friday<br />10:00 AM – 5:00 PM<br /><br />Saturday<br />10:00 AM – 2:00 PM<br /><br />Sunday<br />Closed</p></article>
         </div>
     </div>
 </section>
@@ -45,28 +26,38 @@
     <div class="container">
         <div class="form-wrapper">
             <h2>Send Us a Message</h2>
-            <p>Have a question about our services, availability, or custom designs? We'd love to hear from you. Complete the form below and we'll get back to you as soon as possible.</p>
+            <p>Have a question about our services, availability, or custom designs? Complete the form below and we'll get back to you as soon as possible.</p>
 
-            <form>
+            @if (TempData["SuccessMessage"] is string successMessage)
+            {
+                <div class="form-success" role="status">@successMessage</div>
+            }
+
+            <div asp-validation-summary="ModelOnly" class="form-error" role="alert"></div>
+
+            <form asp-action="Contact" method="post">
                 <div class="form-group">
-                    <label for="FullName">Full Name</label>
-                    <input type="text" id="FullName" name="FullName" class="form-control" placeholder="Enter your full name" />
+                    <label asp-for="FullName">Full Name</label>
+                    <input asp-for="FullName" class="form-control" placeholder="e.g. Jane Doe" />
+                    <span asp-validation-for="FullName" class="field-error"></span>
                 </div>
 
                 <div class="form-group">
-                    <label for="EmailAddress">Email Address</label>
-                    <input type="email" id="EmailAddress" name="EmailAddress" class="form-control" placeholder="Enter your email address" />
+                    <label asp-for="EmailAddress">Email Address</label>
+                    <input asp-for="EmailAddress" class="form-control" placeholder="e.g. jane@email.com" />
+                    <span asp-validation-for="EmailAddress" class="field-error"></span>
                 </div>
 
                 <div class="form-group">
-                    <label for="PhoneNumber">Phone Number (Optional)</label>
-                    <input type="tel" name="PhoneNumber" id="PhoneNumber" class="form-control" placeholder="+27..." />
+                    <label asp-for="PhoneNumber">Phone Number (Optional)</label>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="e.g. +27 82 123 4567" />
+                    <span asp-validation-for="PhoneNumber" class="field-error"></span>
                 </div>
 
                 <div class="form-group">
-                    <label for="ReasonForContact">Reason for Contact</label>
-                    <select name="ReasonForContact" id="ReasonForContact" class="form-control">
-                        <option>Please Select</option>
+                    <label asp-for="ReasonForContact">Reason for Contact</label>
+                    <select asp-for="ReasonForContact" class="form-control">
+                        <option value="">Please select</option>
                         <option>General Enquiry</option>
                         <option>Pricing Information</option>
                         <option>Availability</option>
@@ -75,20 +66,22 @@
                         <option>Website Feedback</option>
                         <option>Other</option>
                     </select>
+                    <span asp-validation-for="ReasonForContact" class="field-error"></span>
                 </div>
 
                 <div class="form-group">
                     <label>Preferred Contact Method</label>
                     <div class="contact-methods">
-                        <label class="radio-option"><input type="radio" name="PreferredContactMethod" value="Email" checked /> Email</label>
-                        <label class="radio-option"><input type="radio" name="PreferredContactMethod" value="Phone Call" /> Phone Call</label>
-                        <label class="radio-option"><input type="radio" name="PreferredContactMethod" value="WhatsApp" /> WhatsApp</label>
+                        <label class="radio-option"><input asp-for="PreferredContactMethod" type="radio" value="Email" /> Email</label>
+                        <label class="radio-option"><input asp-for="PreferredContactMethod" type="radio" value="Phone Call" /> Phone Call</label>
+                        <label class="radio-option"><input asp-for="PreferredContactMethod" type="radio" value="WhatsApp" /> WhatsApp</label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="Message">Your Message</label>
-                    <textarea name="Message" id="Message" class="form-control" rows="7" placeholder="Tell us how we can help you..."></textarea>
+                    <label asp-for="Message">Your Message</label>
+                    <textarea asp-for="Message" class="form-control" rows="7" placeholder="Tell us how we can help you..."></textarea>
+                    <span asp-validation-for="Message" class="field-error"></span>
                 </div>
 
                 <button type="submit" class="btn-primary">Send Message</button>
@@ -115,3 +108,7 @@
         <a asp-controller="Home" asp-action="CustomOrder" class="btn-primary">Begin Your Custom Journey</a>
     </div>
 </section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
