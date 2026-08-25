@@ -39,5 +39,47 @@ namespace TyrelleTaytumDesigns.Models
 
         [Required, StringLength(10)]
         public string HasMeasurements { get; set; } = "No";
+
+        [StringLength(20)]
+        public string MeasurementUnit { get; set; } = "cm";
+
+        [StringLength(30)]
+        public string? Height { get; set; }
+
+        [StringLength(30)]
+        public string? BustChest { get; set; }
+
+        [StringLength(30)]
+        public string? Waist { get; set; }
+
+        [StringLength(30)]
+        public string? Hips { get; set; }
+
+        [StringLength(30)]
+        public string? ShoulderToShoulder { get; set; }
+
+        [StringLength(30)]
+        public string? ShoulderToWaist { get; set; }
+
+        [StringLength(30)]
+        public string? Neck { get; set; }
+
+        [StringLength(30)]
+        public string? ArmLength { get; set; }
+
+        [StringLength(30)]
+        public string? UpperArm { get; set; }
+
+        [StringLength(30)]
+        public string? Wrist { get; set; }
+
+        [StringLength(30)]
+        public string? WaistToFloor { get; set; }
+
+        [StringLength(30)]
+        public string? FullGarmentLength { get; set; }
+
+        [StringLength(30)]
+        public string? Inseam { get; set; }
     }
 }
