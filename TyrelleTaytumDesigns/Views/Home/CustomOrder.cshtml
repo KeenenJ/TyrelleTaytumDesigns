@@ -122,7 +122,11 @@
             <div id="measurementsSection" class="measurements-section" hidden>
                 <div class="measurements-heading">
                     <h3>Your Measurements</h3>
-                    <p>Please enter the measurements you already have. Use the unit selected below and leave anything you don't have blank.</p>
+                    <p>Please enter the measurements you already have. Use the unit selected below.</p>
+                    <div class="measurements-note">
+                        <strong>Don't have every measurement? That's completely okay.</strong>
+                        Enter the measurements you know and leave any others blank. Tyrelle can help with anything that's missing during the next step of your custom journey.
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -136,55 +140,55 @@
                 <div class="measurement-grid">
                     <div class="form-group">
                         <label asp-for="Height">Height</label>
-                        <input asp-for="Height" class="form-control" placeholder="e.g. 168" />
+                        <input asp-for="Height" class="form-control" placeholder="e.g. 168 (optional)" />
                     </div>
                     <div class="form-group">
                         <label asp-for="BustChest">Bust / Chest</label>
-                        <input asp-for="BustChest" class="form-control" placeholder="e.g. 92" />
+                        <input asp-for="BustChest" class="form-control" placeholder="e.g. 92 (optional)" />
                     </div>
                     <div class="form-group">
                         <label asp-for="Waist">Waist</label>
-                        <input asp-for="Waist" class="form-control" placeholder="e.g. 74" />
+                        <input asp-for="Waist" class="form-control" placeholder="e.g. 74 (optional)" />
                     </div>
                     <div class="form-group">
                         <label asp-for="Hips">Hips</label>
-                        <input asp-for="Hips" class="form-control" placeholder="e.g. 102" />
+                        <input asp-for="Hips" class="form-control" placeholder="e.g. 102 (optional)" />
                     </div>
                     <div class="form-group">
                         <label asp-for="ShoulderToShoulder">Shoulder to Shoulder</label>
-                        <input asp-for="ShoulderToShoulder" class="form-control" placeholder="e.g. 40" />
+                        <input asp-for="ShoulderToShoulder" class="form-control" placeholder="e.g. 40 (optional)" />
                     </div>
                     <div class="form-group">
                         <label asp-for="ShoulderToWaist">Shoulder to Waist</label>
-                        <input asp-for="ShoulderToWaist" class="form-control" placeholder="e.g. 42" />
+                        <input asp-for="ShoulderToWaist" class="form-control" placeholder="e.g. 42 (optional)" />
                     </div>
                     <div class="form-group">
                         <label asp-for="Neck">Neck</label>
-                        <input asp-for="Neck" class="form-control" placeholder="e.g. 36" />
+                        <input asp-for="Neck" class="form-control" placeholder="e.g. 36 (optional)" />
                     </div>
                     <div class="form-group">
                         <label asp-for="ArmLength">Arm Length</label>
-                        <input asp-for="ArmLength" class="form-control" placeholder="e.g. 60" />
+                        <input asp-for="ArmLength" class="form-control" placeholder="e.g. 60 (optional)" />
                     </div>
                     <div class="form-group">
                         <label asp-for="UpperArm">Upper Arm</label>
-                        <input asp-for="UpperArm" class="form-control" placeholder="e.g. 30" />
+                        <input asp-for="UpperArm" class="form-control" placeholder="e.g. 30 (optional)" />
                     </div>
                     <div class="form-group">
                         <label asp-for="Wrist">Wrist</label>
-                        <input asp-for="Wrist" class="form-control" placeholder="e.g. 16" />
+                        <input asp-for="Wrist" class="form-control" placeholder="e.g. 16 (optional)" />
                     </div>
                     <div class="form-group">
                         <label asp-for="WaistToFloor">Waist to Floor</label>
-                        <input asp-for="WaistToFloor" class="form-control" placeholder="e.g. 110" />
+                        <input asp-for="WaistToFloor" class="form-control" placeholder="e.g. 110 (optional)" />
                     </div>
                     <div class="form-group">
                         <label asp-for="FullGarmentLength">Full Garment Length</label>
-                        <input asp-for="FullGarmentLength" class="form-control" placeholder="e.g. 145" />
+                        <input asp-for="FullGarmentLength" class="form-control" placeholder="e.g. 145 (optional)" />
                     </div>
                     <div class="form-group">
                         <label asp-for="Inseam">Inseam</label>
-                        <input asp-for="Inseam" class="form-control" placeholder="e.g. 78" />
+                        <input asp-for="Inseam" class="form-control" placeholder="e.g. 78 (optional)" />
                     </div>
                 </div>
             </div>
@@ -233,9 +237,25 @@
         }
 
         .measurements-heading p {
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             font-size: .9rem;
             color: var(--lux-muted);
+        }
+
+        .measurements-note {
+            margin-bottom: 24px;
+            padding: 14px 16px;
+            border-left: 3px solid var(--lux-gold);
+            background: rgba(255, 255, 255, .65);
+            font-size: .9rem;
+            line-height: 1.6;
+            color: var(--lux-muted);
+        }
+
+        .measurements-note strong {
+            display: block;
+            margin-bottom: 3px;
+            color: var(--lux-ink);
         }
 
         .measurement-grid {
