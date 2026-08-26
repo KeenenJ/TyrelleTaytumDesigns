@@ -37,16 +37,16 @@ p { color: var(--light-text); }
 /* ==========================================
    Navbar
 ========================================== */
-.navbar { padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.12); background: #111111; }
+.navbar { padding: 18px 0; border-bottom: 1px solid var(--border); background: var(--white); }
 .navbar .container { display: flex; justify-content: space-between; align-items: center; }
-.logo { display: flex; align-items: center; text-decoration: none; color: var(--white); line-height: 1; }
+.logo { display: flex; align-items: center; text-decoration: none; color: var(--black); line-height: 1; }
 .navbar-logo-image { width: 118px; height: 62px; object-fit: cover; object-position: center; display: block; }
 .logo-main { font-family: "Cormorant Garamond", serif; font-size: 2rem; letter-spacing: .25rem; font-weight: 700; }
 .logo-sub { margin-top: .35rem; letter-spacing: .6rem; font-size: .75rem; color: var(--light-text); }
 .logo-image { width: 160px; height: auto; }
 .nav-links { display: flex; gap: 55px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { text-decoration: none; color: var(--white); font-size: .95rem; font-weight: 500; letter-spacing: .05rem; position: relative; transition: .3s ease; }
-.nav-links a::after { content: ""; position: absolute; left: 0; bottom: -10px; width: 0; height: 1px; background: var(--white); transition: .3s ease; }
+.nav-links a { text-decoration: none; color: var(--black); font-size: .95rem; font-weight: 500; letter-spacing: .05rem; position: relative; transition: .3s ease; }
+.nav-links a::after { content: ""; position: absolute; left: 0; bottom: -10px; width: 0; height: 1px; background: var(--black); transition: .3s ease; }
 .nav-links a:hover { opacity: .65; }
 .nav-links a:hover::after { width: 100%; }
 
@@ -142,11 +142,10 @@ section p { max-width: 700px; }
    FOOTER — CLEAN / COMPACT LUXURY
 ========================================== */
 .footer {
-    background: #fafafa;
-    color: #111111;
+    background: #111111;
+    color: #ffffff;
     padding: 42px 0 20px;
     margin-top: 60px;
-    border-top: 1px solid #eaeaea;
 }
 
 .footer-grid {
@@ -161,7 +160,7 @@ section p { max-width: 700px; }
 
 .footer h3,
 .footer h4 {
-    color: #111111;
+    color: #ffffff;
     margin-bottom: 12px;
 }
 
@@ -178,7 +177,7 @@ section p { max-width: 700px; }
 
 .footer p,
 .footer a {
-    color: #555555;
+    color: rgba(255,255,255,.72);
     text-decoration: none;
     font-size: .78rem;
     line-height: 1.55;
@@ -186,7 +185,7 @@ section p { max-width: 700px; }
 }
 
 .footer p { margin-bottom: 6px; }
-.footer a:hover { color: #111111; }
+.footer a:hover { color: #ffffff; }
 .footer-brand p { max-width: 220px; }
 .footer-links ul { list-style: none; padding: 0; margin: 0; }
 .footer-links li { margin-bottom: 5px; }
@@ -199,10 +198,10 @@ section p { max-width: 700px; }
     max-width: 1100px;
     margin: 28px auto 0;
     padding-top: 16px;
-    border-top: 1px solid #e3e3e3;
+    border-top: 1px solid rgba(255,255,255,.1);
 }
 
-.copyright p { margin: 0; color: #777777; font-size: .7rem; }
+.copyright p { margin: 0; color: rgba(255,255,255,.5); font-size: .7rem; }
 
 /* ==========================================
    RESPONSIVE
