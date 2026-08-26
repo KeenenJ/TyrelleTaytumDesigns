@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TyrelleTaytumDesigns")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7fb9753143dc0e63dca3d7299f028dd616e0f76")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64f553649fdfd58876e5d92ca40daa4411c5bf43")]
 [assembly: System.Reflection.AssemblyProductAttribute("TyrelleTaytumDesigns")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TyrelleTaytumDesigns")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
