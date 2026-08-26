@@ -8,6 +8,7 @@ wwwroot\css\home-gallery.css
 wwwroot\css\launch-polish.css
 wwwroot\css\luxury-overrides.css
 wwwroot\css\page-eyebrows.css
+wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\images\behind-the-scene\BTS1.jpg
 wwwroot\images\behind-the-scene\BTS2.jpg
@@ -21,6 +22,7 @@ wwwroot\images\collections\IMG4.jpg
 wwwroot\images\collections\IMG5.jpg
 wwwroot\images\designer\PP1.jpg
 wwwroot\images\designer\PP2.jpg
+wwwroot\images\logo\TyrelleTaytumLog-W.jpg
 wwwroot\images\logo\TyrelleTaytumLogo.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -80,4 +82,3 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\site.css
