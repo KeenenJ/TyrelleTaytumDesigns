@@ -21,14 +21,16 @@
         .brand-copy { display: flex; flex-direction: column; justify-content: center; }
         .brand-copy-main { font-family: "Cormorant Garamond", serif; font-size: 1.45rem; letter-spacing: .18rem; font-weight: 600; color: var(--black); line-height: 1.05; }
         .brand-copy-sub { margin-top: 3px; font-size: .58rem; letter-spacing: .32rem; color: var(--light-text); text-transform: uppercase; }
+        .navbar-logo-image { width: 88px; height: 62px; object-fit: contain; object-position: center; flex: 0 0 auto; }
         .footer-brand-lockup { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
         .footer-brand-copy { display: flex; flex-direction: column; justify-content: center; }
         .footer-brand-name { font-family: "Cormorant Garamond", serif; font-size: 1.45rem; letter-spacing: .16rem; font-weight: 600; color: #ffffff; line-height: 1.05; }
         .footer-brand-designs { margin-top: 3px; font-size: .58rem; letter-spacing: .28rem; color: rgba(255,255,255,.65); text-transform: uppercase; }
-        .footer-logo-image { mix-blend-mode: screen; }
+        .footer-logo-image { width: 105px; height: 78px; object-fit: contain; object-position: center; flex: 0 0 auto; }
         @@media(max-width:768px) {
             .brand-copy-main { font-size: 1.2rem; }
             .brand-copy-sub { font-size: .5rem; letter-spacing: .25rem; }
+            .navbar-logo-image { width: 78px; height: 54px; }
             .footer-brand-lockup { align-items: flex-start; }
         }
     </style>
@@ -39,7 +41,7 @@
         <nav class="navbar">
             <div class="container">
                 <a class="logo brand-lockup" asp-controller="Home" asp-action="Index" aria-label="Tyrelle Taytum Designs home">
-                    <img class="navbar-logo-image" src="~/images/logo/TyrelleTaytumLog-W.jpg" alt="Tyrelle Taytum Designs" />
+                    <img class="navbar-logo-image" src="~/images/logo/TyrelleTaytum_Logo_White_Transparent.png" alt="Tyrelle Taytum Designs" />
                     <span class="brand-copy">
                         <span class="brand-copy-main">Tyrelle Taytum</span>
                         <span class="brand-copy-sub">Designs</span>
@@ -64,7 +66,7 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <div class="footer-brand-lockup">
-                    <img class="footer-logo-image" src="~/images/logo/TyrelleTaytumLogo.jpg" alt="Tyrelle Taytum Designs" />
+                    <img class="footer-logo-image" src="~/images/logo/TyrelleTaytum_Logo_Black_Transparent.png" alt="Tyrelle Taytum Designs" />
                     <div class="footer-brand-copy">
                         <span class="footer-brand-name">Tyrelle Taytum</span>
                         <span class="footer-brand-designs">Designs</span>
