@@ -69,20 +69,32 @@
     line-height: 1.7;
 }
 
-/* Keep Email and Phone content aligned with the Studio card. */
+/* Email and Phone should match the Studio card without link underlines. */
 .contact-card > a {
     display: inline-block;
     margin: 0;
+    padding-bottom: 0;
     text-align: left !important;
     color: #2b2b2b;
-    text-decoration: none;
+    text-decoration: none !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
     overflow-wrap: anywhere;
 }
 
-.contact-card > a:hover { color: #9d8964; }
+.contact-card > a:hover {
+    color: #9d8964;
+    text-decoration: none !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+}
 
-/* Keep each business-hours row intact instead of allowing AM/PM to fall away. */
+/* Keep each desktop business-hours row together so AM/PM never drops to a new line. */
 .contact-hours {
+    white-space: nowrap;
+}
+
+.contact-hours span {
     white-space: nowrap;
 }
 
@@ -183,7 +195,8 @@
     .contact-information { padding: 40px 0; }
     .contact-grid, .contact-form-grid, .contact-social-links { grid-template-columns: 1fr; }
     .contact-card { min-height: auto; }
-    .contact-hours { white-space: normal; }
+    .contact-hours,
+    .contact-hours span { white-space: normal; }
     .contact-form-section { padding: 54px 0 64px; }
     .contact-form-wrapper { padding: 28px 20px; }
     .contact-methods { flex-direction: column; }
