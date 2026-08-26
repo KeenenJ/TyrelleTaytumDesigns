@@ -16,14 +16,34 @@
     <link rel="stylesheet" href="~/css/button-rounding.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/gallery-polish.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/about-polish.css" asp-append-version="true" />
+    <style>
+        .brand-lockup { display: flex; align-items: center; gap: 14px; }
+        .brand-copy { display: flex; flex-direction: column; justify-content: center; }
+        .brand-copy-main { font-family: "Cormorant Garamond", serif; font-size: 1.45rem; letter-spacing: .18rem; font-weight: 600; color: var(--black); line-height: 1.05; }
+        .brand-copy-sub { margin-top: 3px; font-size: .58rem; letter-spacing: .32rem; color: var(--light-text); text-transform: uppercase; }
+        .footer-brand-lockup { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+        .footer-brand-copy { display: flex; flex-direction: column; justify-content: center; }
+        .footer-brand-name { font-family: "Cormorant Garamond", serif; font-size: 1.45rem; letter-spacing: .16rem; font-weight: 600; color: #ffffff; line-height: 1.05; }
+        .footer-brand-designs { margin-top: 3px; font-size: .58rem; letter-spacing: .28rem; color: rgba(255,255,255,.65); text-transform: uppercase; }
+        .footer-logo-image { mix-blend-mode: screen; }
+        @media(max-width:768px) {
+            .brand-copy-main { font-size: 1.2rem; }
+            .brand-copy-sub { font-size: .5rem; letter-spacing: .25rem; }
+            .footer-brand-lockup { align-items: flex-start; }
+        }
+    </style>
     @RenderSection("Styles", required: false)
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="container">
-                <a class="logo" asp-controller="Home" asp-action="Index" aria-label="Tyrelle Taytum Designs home">
+                <a class="logo brand-lockup" asp-controller="Home" asp-action="Index" aria-label="Tyrelle Taytum Designs home">
                     <img class="navbar-logo-image" src="~/images/logo/TyrelleTaytumLog-W.jpg" alt="Tyrelle Taytum Designs" />
+                    <span class="brand-copy">
+                        <span class="brand-copy-main">Tyrelle Taytum</span>
+                        <span class="brand-copy-sub">Designs</span>
+                    </span>
                 </a>
 
                 <ul class="nav-links">
@@ -43,7 +63,13 @@
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-brand">
-                <img class="footer-logo-image" src="~/images/logo/TyrelleTaytumLogo.jpg" alt="Tyrelle Taytum Designs" />
+                <div class="footer-brand-lockup">
+                    <img class="footer-logo-image" src="~/images/logo/TyrelleTaytumLogo.jpg" alt="Tyrelle Taytum Designs" />
+                    <div class="footer-brand-copy">
+                        <span class="footer-brand-name">Tyrelle Taytum</span>
+                        <span class="footer-brand-designs">Designs</span>
+                    </div>
+                </div>
                 <p>Fashion as a Tool for Transformation</p>
             </div>
 
